@@ -1,35 +1,33 @@
-
-
-
 <div id="btn">
-    <div id='top'></div>
-    <div id='middle'></div>
-    <div id='bottom'></div>
+  <div id='top'></div>
+  <div id='middle'></div>
+  <div id='bottom'></div>
 </div>
 <div id="box">
-    <div id="items">
-        <div class="item">             
-           <%= link_to "#" do %>
-           <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
-           <% end %>
-       </div>
-       <div class="item">
-           <%= link_to "#" do %>
-           <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
-           <% end %>
-       </div>
-
-       <div class="item"> 
-        <% if user_signed_in? %>
-        <i class="fa fa-sign-out"></i>
-        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-        <% else %>
-        <i class="fa fa-sign-in"></i>
-
-        <%= link_to('Login', new_user_session_path)  %>  
-        <% end %>
-    </div>
+  <div id="items">
+   <div class="item">
+     <%= link_to "/" do %>
+     <i class="fa fa-home"></i>  
+     <%= t ".profile", default: "Home" %>
+     <% end %>
+   </div>
+   <% if user_signed_in? %>
+   <div class="item">             
+     <%= link_to "/profile" do %>
+     <i class="fa fa-user"></i> 
+     <%= t ".profile", default: "Profile" %>
+     <% end %>
+   </div>
+   <% end %>
+   <div class="item"> 
+    <% if user_signed_in? %>
+    <i class="fa fa-sign-out"></i>
+    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+    <% else %>
+    <i class="fa fa-sign-in"></i>
+    <%= link_to('Login', new_user_session_path)  %>  
+    <% end %>
+  </div>
 </div>
-
 </div>
 </div>

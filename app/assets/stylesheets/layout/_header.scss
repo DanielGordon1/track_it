@@ -25,3 +25,16 @@
     }
 }
 
+.fa-pause:before {
+    padding: 20px;
+}
+
+.fa-pause:hover {
+    color: green;
+    transition: all 3000ms ease-in-out;
+    
+}
+.fa-play:hover {
+    color: green;
+    transition: all 3000ms ease-in-out;
+}

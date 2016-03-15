@@ -45,7 +45,7 @@ body {
 }
 
 #btn.active {
-    left: 230px;
+    right: 230px;
     div {
     }
     #top {
@@ -65,7 +65,7 @@ body {
             z-index: 4;
             overflow: auto;
             top: 0px;
-            left: -275px;
+            right: -275px;
             width: 275px;
             opacity: 0;
             padding: 20px 0px;
@@ -76,7 +76,7 @@ body {
         }
 
         #box.active {
-            left: 0px;
+            right: 0px;
             opacity: 1;
         }
 

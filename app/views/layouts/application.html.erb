@@ -4,8 +4,8 @@
     <%= render 'shared/head'  %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
   <body>
-    <%= render 'shared/sidebar' %> 
     <%= render 'shared/flashes' %>
+    <%= render 'shared/sidebar' %> 
     <%= yield %>
     <%= javascript_include_tag 'application' %>
   </body>

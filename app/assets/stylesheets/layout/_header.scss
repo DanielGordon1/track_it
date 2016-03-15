@@ -31,9 +31,10 @@
 
 .fa-pause:hover {
     color: green;
-    transition: all 3000ms ease;
+    transition: all 3000ms ease-in-out;
+    
 }
 .fa-play:hover {
     color: green;
-    transition: all 3000ms ease;
+    transition: all 3000ms ease-in-out;
 }

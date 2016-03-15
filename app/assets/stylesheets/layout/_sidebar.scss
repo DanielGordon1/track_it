@@ -41,12 +41,11 @@ a:hover, a:focus {
     z-index: 5;
     top: 15px;
     right: 15px;
-    cursor: help;
+    cursor: pointer;
     transition: left 500ms $easing;
     div {
         width: 35px;
         height: 2px;
-
         margin-bottom: 8px;
         background-color: black;
         transition: transform 500ms $easing, opacity 500ms, background-color 250ms;

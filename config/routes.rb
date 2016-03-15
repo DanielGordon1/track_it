@@ -6,13 +6,13 @@ Rails.application.routes.draw do
 
   resources :trackers, only: [:show]
 
-  resources :tracks, only: [:show, :new, :create] do
+  resources :tracks, only: [:show, :new, :create, :destroy] do
     member do
       patch :upvote
     end
 
-    resources :comments, only: [:new, :create]
+    resources :comments, only: [:new, :create, :destroy]
   end
 
-  resource :profile, only: [:show, :edit, :update]
+  resource :profile, only: [:show, :edit, :update, :destroy]
 end

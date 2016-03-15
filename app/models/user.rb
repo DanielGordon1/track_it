@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:soundcloud]
 
+  mount_uploader :photo, PhotoUploader
 
   has_many :comments, dependent: :destroy
   has_many :tracks, dependent: :destroy

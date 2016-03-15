@@ -10,6 +10,9 @@ gem 'devise'
 gem 'redis'
 gem "slim-rails"
 
+gem 'cloudinary'
+gem 'carrierwave'
+
 gem 'sass-rails'
 gem 'jquery-rails'
 gem 'uglifier'

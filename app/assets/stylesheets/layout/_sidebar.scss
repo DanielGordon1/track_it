@@ -10,6 +10,14 @@ $easing: cubic-bezier(.6, .05, .28, .91);
 body {
     font-size: 16px;
 }
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: grey;
+  text-decoration: none;
+}
 
 #page-wrapper {
     position: absolute;
@@ -38,14 +46,15 @@ body {
     div {
         width: 35px;
         height: 2px;
+
         margin-bottom: 8px;
-        background-color: $blue;
+        background-color: black;
         transition: transform 500ms $easing, opacity 500ms, background-color 250ms;
     }
 }
 
 #btn.active {
-    right: 230px;
+    
     div {
     }
     #top {
@@ -88,10 +97,11 @@ body {
                 position: relative;
                 cursor: pointer;
                 font-size: 2em;
-                padding: 15px 30px;
+                padding: 15px 35px;
                 transition: all 250ms;
                 &:hover {
                     padding: 15px 45px;
+                    text-decoration: none;
                     
                 }
             }

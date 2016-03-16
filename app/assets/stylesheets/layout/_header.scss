@@ -4,7 +4,7 @@
     // position: center;
     width: 100%;
     height: 800px;
-    background: url(https://upload.wikimedia.org/wikipedia/commons/7/77/Waveforms.svg) no-repeat center center scroll;
+    background: url(http://res.cloudinary.com/waata/image/upload/v1458134690/wafevorm_livixq.jpg) no-repeat center center scroll;
     align-items: center;
     justify-content:center;
     border: 1px solid #ccc;
@@ -13,7 +13,6 @@
     background-size: cover;
     -o-background-size: cover; */
 }
-
 
 .header-content {
 
@@ -33,4 +32,8 @@
 .fa-play:hover {
     color: green;
     transition: all 2000ms ease-in-out;
+}
+.test {
+    // background: white;
+    // margin: 50px;
 }

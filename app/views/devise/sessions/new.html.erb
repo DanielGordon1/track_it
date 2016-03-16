@@ -1,22 +1,20 @@
-<div class= "container">
-  <div class= "row">
-    <div class = "text-center">
-      <div class= "pagination-centered">
-        <div class= "col-sm-3 col-md-4 col-lg-4 col-xs-offset-4 well" style="margin-top: 150px;">
-          <h2>Log in</h2>
-          <div class="form-group">
-            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            
-            <div class="form-inputs">
-              <%= f.input :email, :placeholder => 'EMAIL', required: false, autofocus: true %>
-              <%= f.input :password,:placeholder => 'Password', required: false %>
-              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-              <%= f.button :submit, "Log in" %>
-            </div>
-          </div>
-          <% end %>
-        </form>
-        <%= render "devise/shared/links" %>
+<div class= "container form">
+  <div class= "row well">  
+
+    <h2>Log in</h2>
+
+    <div class="form-group">
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      
+      <div class="form-inputs">
+        <%= f.input :email, :placeholder => 'EMAIL', required: false, autofocus: true %>
+        <%= f.input :password,:placeholder => 'Password', required: false %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <%= f.button :submit, "Log in" %>
       </div>
     </div>
-  </div>
+    <% end %>
+  </form>
+  <%= render "devise/shared/links" %>
+</div>
+</div>

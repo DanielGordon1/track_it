@@ -1,11 +1,38 @@
 
+    <div class="profile-header-wrapper">
+      <div class="container profile-header-container text-center">
+        <div class="profile-header-infos">
+          <!-- <img src="trump.jpeg" alt=""> -->
+          <%= image_tag "trump.jpeg", class:"avatar-bordered" %>
+          <h1><%= @tracker.username.capitalize %></h1>
+          <h2></h2>
+        </div>
+        <div class="tabs">
+          <a class="tab active" data-target="#bio">
+            <h3>Upvotes</h3>
+          </a>
+          <a class="tab" data-target="#projects">
+            <h3>Comments</h3>
+          </a>
+          <a class="tab" data-target="#contact">
+            <h3>Tracks</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container text-center">
+      <div class="tab-content" id="bio">
+        <p>List of upvoted Tracks.</p>
+      </div>
+      <div class="tab-content hidden" id="projects">
+        <p>List of Comments on Tracks.</p>
+      </div>
+      <div class="tab-content hidden" id="contact">
+        <p>Tracks uploaded by this person.</p>
+      </div>
+    </div>
+
 <div class="text-center">
   <h1>This is the tracker public profile page</h1>
-
-  <h2> Welcome to the page of <%= @tracker.username %> </h2>
-
-
-  <div class="contained padded">
-    <h5> Three tabs containing uploaded music, comments and upvotes will be displaced here. </h5>
-  </div>
 </div>

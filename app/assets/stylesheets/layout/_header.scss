@@ -7,6 +7,7 @@
     background: url(https://upload.wikimedia.org/wikipedia/commons/7/77/Waveforms.svg) no-repeat center center scroll;
     align-items: center;
     justify-content:center;
+    border: 1px solid #ccc;
 /*     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -19,22 +20,17 @@
   a {
     text-decoration: none;
     color: black;
-  }
-    .h1 {
-        font-size: 500px
-    }
-}
+} }
 
 .fa-pause:before {
     padding: 20px;
 }
 
 .fa-pause:hover {
-    color: green;
-    transition: all 3000ms ease-in-out;
-    
+    color: orange;
+    transition: all 2500ms ease-in-out;
 }
 .fa-play:hover {
     color: green;
-    transition: all 3000ms ease-in-out;
+    transition: all 2000ms ease-in-out;
 }

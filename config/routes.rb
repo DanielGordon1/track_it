@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       patch :upvote
     end
 
-    resources :comments, only: [:new, :create, :destroy]
+    resources :comments, only: [:create, :destroy]
   end
 
   resource :profile, only: [:show, :edit, :update, :destroy]

@@ -4,6 +4,7 @@ before_action :find_track, only: [:show, :upvote, :destroy]
 
 
 def show
+  @comment = Comment.new
 end
 
 def new

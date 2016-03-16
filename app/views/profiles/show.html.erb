@@ -1,11 +1,38 @@
 
-<div class="text-center">
-<h1>Hi <%= @profile.first_name %> <%= @profile.last_name %></h1>
-
-
-<h2> Welcome <%= @profile.username %> </h2> 
-
-
-<p> This is the user profile page </p>
+<div class="profile-header-wrapper">
+  <div class="container profile-header-container text-center">
+    <div class="profile-header-infos">
+      <!-- <img src="trump.jpeg" alt=""> -->
+      <%= image_tag "trump.jpeg", class:"avatar-bordered" %>
+      <h1><%= current_user.username.capitalize %></h1>
+      <h2></h2>
+    </div>
+    <div class="tabs">
+      <a class="tab active" data-target="#bio">
+        <h3>Upvotes</h3>
+      </a>
+      <a class="tab" data-target="#projects">
+        <h3>Comments</h3>
+      </a>
+      <a class="tab" data-target="#contact">
+        <h3>Tracks</h3>
+      </a>
+    </div>
+  </div>
 </div>
 
+<div class="container text-center">
+  <div class="tab-content" id="bio">
+    <p>List of your upvoted Tracks.</p>
+  </div>
+  <div class="tab-content hidden" id="projects">
+    <p>List of your Comments on Tracks.</p>
+  </div>
+  <br>
+  <div class="tab-content hidden" id="contact">
+ <button type="button" class="btn btn-secondary"><%= link_to 'Add a new track', new_track_path%></button> 
+    <br>
+    <br>
+    <p>Tracks uploaded by you.</p>
+  </div>
+</div>

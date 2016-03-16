@@ -1,4 +1,4 @@
-<%= simple_form_for([ track, comment ]) do |form| %>
+<%= simple_form_for([ track, comment ], remote: true) do |form| %>
   <%= form.input :content %>
   <%= form.button :submit %>
 <% end %>

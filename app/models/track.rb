@@ -1,7 +1,7 @@
 class Track < ActiveRecord::Base
   extend Enumerize
 
-  enumerize :versions, in: [:sketch, :rough, :finale]
+  enumerize :version, in: [:sketch, :rough, :finale]
 
   belongs_to :user
 

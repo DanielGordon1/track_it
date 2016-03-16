@@ -2,7 +2,7 @@
 
     <% @tracks.each do |track| %>
     <h2><%= track.user.username %></h2>
-    <h2><%= track.name %></h2>
+    <h2><%= link_to track.name, track_path(track) %></h2>
     <h2><%= track.version %></h2>
     <h2><%= track.genre %></h2>
     <td><%= pluralize(track.votes.count, "vote") %></td>

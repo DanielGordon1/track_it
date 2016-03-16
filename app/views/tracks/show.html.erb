@@ -1,1 +1,16 @@
 This page shows a track
+
+<h1><%= @track.name %></h1>
+<h2>
+  <%= pluralize @track.comment.size, "Comment" %>
+</h2>
+
+<div id="comments">
+  <% if @track.comments.blank? %>
+    Be the first to leave a comment for <%= @track.name %> by <%= @track.user.username %>
+  <% else %>
+    <% @track.comments.each do |comment| %>
+      <%= render 'comment/show', comment: comment %>
+    <% end %>
+  <% end %>
+</div>

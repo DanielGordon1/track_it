@@ -23,6 +23,8 @@ gem 'autoprefixer-rails'
 
 gem 'omniauth-soundcloud', '~> 1.0.0'
 
+gem 'enumerize'
+
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'

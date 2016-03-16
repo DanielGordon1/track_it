@@ -1,6 +1,5 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def soundcloud
-
     user = User.find_for_soundcloud_oauth(request.env['omniauth.auth'])
 
     if user.persisted?

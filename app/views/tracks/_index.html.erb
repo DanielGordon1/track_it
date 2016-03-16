@@ -1,8 +1,10 @@
- <h1>Hot tracks</h1>
+ <h1 id="hot-tracks">Hot tracks</h1>
 
-  <% @tracks.each do |track| %>
-    <h2><%= track.tracker.username %></h2>
+<% @tracks.each do |track| %>
+    <h2><%= track.user.username %></h2>
     <h2><%= track.name %></h2>
     <h2><%= track.version %></h2>
     <h2><%= track.genre %></h2>
-  <% end %>
+    <td><%= pluralize(track.votes.count, "vote") %></td>
+    <td><%= button_to '+1', upvote_track_path(track), method: :patch %></td>
+<% end %>

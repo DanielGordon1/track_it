@@ -1,10 +1,7 @@
 class TracksController < ApplicationController
 
-before_action :find_track, only: [:show, :destroy]
+before_action :find_track, only: [:show, :upvote, :destroy]
 
-def index
-  @tracks = Track.all
-end
 
 def show
 end
@@ -27,6 +24,11 @@ def destroy
   redirect_to current_user
 end
 
+def upvote
+  @track.votes.where(user: current_user).first_or_create
+  redirect_to root_path(anchor: "hot-tracks")
+end
+
 private
 
 def find_track
@@ -34,7 +36,7 @@ def find_track
 end
 
 def track_params
-  params.require(:track).permit(:name, :genre, :status)
+  params.require(:track).permit(:name, :genre, :version)
 end
 
 end

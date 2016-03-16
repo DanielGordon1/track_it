@@ -6,10 +6,13 @@
   margin: 0;
   text-align: center;
   color: white;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .alert-info {
   background: $green;
 }
 .alert-warning {
-  background: $red;
+  background: orange;
 }

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :tracks, only: [:show, :new, :create, :destroy] do
     member do
       patch :upvote
+      patch :downvote
     end
 
     resources :comments, only: [:create, :destroy]

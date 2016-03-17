@@ -1,8 +1,11 @@
-.btn-vote {
-  // display: inline-block;
-}
-
 .vote-buttons {
   display: flex;
   justify-content:center;
+}
+
+.btn-vote-up {
+  color:green;
+}
+.btn-vote-down {
+  color:red;
 }

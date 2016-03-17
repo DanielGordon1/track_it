@@ -2,12 +2,20 @@ class CommentsController < ApplicationController
   def create
     @track = Track.find(params[:track_id])
     @comment = Comment.new(comment_params)
+    @comment.user = current_user
     @comment.track = @track
     if @comment.save
-      redirect_to track_path(@tracks)
+      respond_to do |format|
+        format.html { redirect_to track_path(@track) }
+        format.js  # <-- will render `app/views/comments/create.js.erb`
+      end
     else
-      render 'tracks/show'
+      respond_to do |format|
+        format.html { render 'tracks/show' }
+        format.js  # <-- will render `app/views/comments/create.js.erb`
+      end
     end
+
   end
 
   private

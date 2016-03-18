@@ -27,22 +27,13 @@ class TracksController < ApplicationController
 
   def upvote
     if current_user.votes.where(user: current_user).exists?
-      flash[:notice] = "You have already upvoted this, Don't be Greeeeeddyyyyy!!!"
-      redirect_to root_path(anchor: "hot-tracks")
+       @track.votes.where(user: current_user).first.destroy
+       redirect_to root_path(anchor: "hot-tracks")
     else 
-     @track.votes.where(user: current_user).first_or_create
-     redirect_to root_path(anchor: "hot-tracks")
+       @track.votes.where(user: current_user).first_or_create
+       redirect_to root_path(anchor: "hot-tracks")
    end
  end
-
- def downvote
-  if current_user.votes.where(user: current_user).exists?
-    flash[:notice] = "You Really Want To Downvote this Balss MEga TRAck?"
-    @track.votes.where(user: current_user).first.destroy
-    redirect_to root_path(anchor: "hot-tracks")
- end
-
-end
 
 private
 

@@ -1,13 +1,6 @@
-.hot {
-  width: 300px;
-  height: 150px;
-  text-align: inline;
-  margin: 0 auto;
-  // margin: auto;
-}
+.product-container{
+  width:950px;
 
-.no {
-  margin: 0 auto;
 }
 
 .product {
@@ -88,7 +81,7 @@
 
 /* Hover effects */
 .product:hover {
-  background: #f7f7fa;
+  background: lightblue;
   cursor: pointer;
 }
 .product-upvote:hover {

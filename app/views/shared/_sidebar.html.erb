@@ -11,12 +11,22 @@
      <%= t ".profile", default: "Home" %>
      <% end %>
    </div>
+  
+    <% if user_signed_in? %>
+      <div class="item">
+   <%= link_to "/tracks/new" do %>
+        <i class="fa fa-globe"></i>  
+        <%= t ".profile", default: "Track-it" %>
+    <%end%>
+    </div>
+    <% end %>
 
    <% if user_signed_in? %>
    <div class="item">             
 
      <%= link_to "/profile" do %>
      <i class="fa fa-tree"></i>
+
 
      <%= t ".profile", default: "Profile" %>
      <% end %>

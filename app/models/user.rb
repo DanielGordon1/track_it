@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
       user.token_expires_at = Time.current + auth[:credentials].expires_in.seconds
 
       # user infos
-      user.uid = auth[:infos].uid
+      user.uid = auth[:infos].id
       user.city = auth[:infos].city
       user.username = auth[:infos].username
       user.photo_url = auth[:infos].avatar_url

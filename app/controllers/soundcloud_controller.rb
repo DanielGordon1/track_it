@@ -15,7 +15,6 @@ class SoundcloudController < ApplicationController
       sign_in_and_redirect user, event: :authentication
       flash[:notice] = "Successfully signed in with Soundcloud" if is_navigational_format?
     else
-      raise
       flash[:alert] = "Unable to sign in with Soundcloud. Please try again"
       redirect_to new_user_session_url
     end

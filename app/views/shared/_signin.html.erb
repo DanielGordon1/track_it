@@ -19,17 +19,18 @@
                   <%= link_to('No account?', "#", "data-toggle" => "modal", "data-target" => "#user-signup", "data-dismiss"=> "modal")  %>  
                   <br>
                   <%= link_to('Sign in with your soundcloud', "#", "data-toggle" => "modal", "data-target" => "#user-signup-soundcloud")  %> 
-                </div> 
+                  <div class="form-actions">
+                    <%= f.button :submit, "Log in" %>
+                    </div>
+                  </div> 
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="modal-footer text-center">
+        </div>
+        <% end %>
       </div>
-      <div class="modal-footer text-center">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Login</button>
-      </div>
-      <% end %>
     </div>
   </div>
-</div>

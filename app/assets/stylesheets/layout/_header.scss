@@ -7,24 +7,20 @@
     background: url(http://res.cloudinary.com/waata/image/upload/c_fit,h_685/v1458141267/wafevorm_livixq.png) no-repeat center center fixed;
     align-items: center;
     justify-content:center;
-    border: 1px solid #ccc;
-/*     -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover; */
+    // border-left: 260px solid #ccc;
+    // border-right: 260px solid #ccc;
 }
 
 .header-content {
-
   a {
     text-decoration: none;
     color: black;
+    justify-content:center;
 } }
 
 .fa-pause:before {
     padding: 20px;
 }
-
 .fa-pause:hover {
     color: orange;
     transition: all 2500ms ease-in-out;
@@ -45,7 +41,7 @@
     color: purple;
     transition: all 1500ms ease-in-out;
 }
-.test {
-    // background: white;
-    // margin: 50px;
+.fa-caret-square-o-up {
+    color: orange;
+    transition: all 2500ms ease-in-out;
 }

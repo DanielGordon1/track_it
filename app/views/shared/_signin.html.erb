@@ -1,5 +1,5 @@
  <!-- SIGN IN Modal -->
-<div class="modal fade" id="user-signin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+ <div class="modal fade" id="user-signin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <%= simple_form_for(User.new, as: "User", url: user_session_path) do |f| %>
     <div class="modal-content">
@@ -11,17 +11,17 @@
         <div class= "container form">
           <div class= "row well">  
             <div class="form-group">
-
               <div class="form-inputs">
                 <%= f.input :email, :placeholder => 'EMAIL', required: false, autofocus: true %>
                 <%= f.input :password,:placeholder => 'Password', required: false %>
                 <%= f.input :remember_me, as: :boolean %>
-                
-                <%= link_to('No account?', "#", "data-toggle" => "modal", "data-target" => "#user-signup")  %>  
-                <%= link_to('No account?', "#", "data-toggle" => "modal", "data-target" => "#user-signup-soundcloud")  %>  
+                <div class= "text-center">
+                  <%= link_to('No account?', "#", "data-toggle" => "modal", "data-target" => "#user-signup", "data-dismiss"=> "modal")  %>  
+                  <br>
+                  <%= link_to('Sign in with your soundcloud', "#", "data-toggle" => "modal", "data-target" => "#user-signup-soundcloud")  %> 
+                </div> 
               </div>
             </div>
-     
           </div>
         </div>
       </div>

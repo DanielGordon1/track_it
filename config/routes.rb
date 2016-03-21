@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  ActiveAdmin.routes(self)
   root to: 'pages#home'
 
   # Souncloud Omniauth
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   resources :tracks, only: [:show, :new, :create, :destroy] do
     member do
       patch :upvote
+  
     end
 
     resources :comments, only: [:create, :destroy]

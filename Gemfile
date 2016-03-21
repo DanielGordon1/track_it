@@ -11,6 +11,7 @@ gem 'devise'
 gem 'redis'
 gem "slim-rails"
 
+gem 'activeadmin', github: 'activeadmin'
 gem 'cloudinary'
 gem 'carrierwave'
 gem 'enumerize'

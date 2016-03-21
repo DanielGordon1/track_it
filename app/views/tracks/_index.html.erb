@@ -1,14 +1,29 @@
-<div class= "container form">
-  <div class= "row well text-center">  
-  <h1>Hot tracks</h1>
+<div class= "container product-container">
+  <h3 class="readme-header">Hot tracks</h3>
+  <% @tracks.each do |track| %>
+  <div class="product">
+    <div class='product-upvote'>
+      <div class="product-arrow"></div>
+      <%= button_to '+1', upvote_track_path(track), method: :patch, class: "product-arrow" %>
+      <%= (track.votes.count) %>
+    </div>
+    <!-- TODO: Add photo off track -->
+   <%= image_path '' , class: "product-image hidden-xs"%>
+    <div class='product-body'>
+     <h5>
+       <%= link_to track.name, track_path(track) %></h5>
 
-   <% @tracks.each do |track| %>
-   <h2><%= track.user.username %></h2>
-   <h2><%= link_to track.name, track_path(track) %></h2>
-   <h2><%= track.version %></h2>
-   <h2><%= track.genre %></h2>
-   <td><%= pluralize(track.votes.count, "vote") %></td>
-   <td><%= button_to '+1', upvote_track_path(track), method: :patch %></td>
-   <% end %>
- </div>
+       <p><%= track.genre %></p>
+       <small><%= track.version %></small>
+     </div>
+     <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
+      
+      <%=link_to track.user.username, profile_path %>
+
+<!--     <li><i class="fa fa-heart"></i></a></li>
+    <li><i class="fa fa-share"></i></a></li>
+    <li><a href=""><i class="fa fa-star"></i></a></li> -->
+  </ul>
+</div>
+<% end %>
 </div>

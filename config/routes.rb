@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root to: 'pages#home'
 
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  # Souncloud Omniauth
+  get '/soundcloud/auth', to: 'soundcloud#auth'
+  get '/soundcloud/callback', to: 'soundcloud#callback'
+
+  devise_for :users
 
   resources :trackers, only: [:show]
 

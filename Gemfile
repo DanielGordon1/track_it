@@ -14,6 +14,8 @@ gem "slim-rails"
 gem 'activeadmin', github: 'activeadmin'
 gem 'cloudinary'
 gem 'carrierwave'
+gem 'enumerize'
+gem 'soundcloud'
 
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -23,9 +25,6 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
 
-gem 'omniauth-soundcloud', '~> 1.0.0'
-
-gem 'enumerize'
 
 group :development, :test do
   gem 'binding_of_caller'

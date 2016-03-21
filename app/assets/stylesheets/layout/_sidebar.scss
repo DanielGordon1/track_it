@@ -39,7 +39,7 @@ a:hover, a:focus {
 #btn {
     position: fixed;
     z-index: 5;
-    top: 25px;
+    top: 85px;
     right: 25px;
     cursor: pointer;
     transition: left 500ms $easing;
@@ -85,7 +85,7 @@ a:hover, a:focus {
 
         #box.active {
             right: 0px;
-            opacity: 1;
+            opacity: 0.9;
         }
 
         #items {
@@ -101,6 +101,7 @@ a:hover, a:focus {
                 &:hover {
                     padding: 15px 45px;
                     text-decoration: none;
+                    color: white;
                     
                 }
             }

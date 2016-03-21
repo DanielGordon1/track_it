@@ -1,3 +1,3 @@
 setTimeout(function() {
-    $('#modal').fadeOut('fast');
+    $('#alert').fadeOut('fast');
 }, 1000); // <-- time in milliseconds

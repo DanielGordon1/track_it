@@ -1,7 +1,7 @@
 .banner_track {
   color: white;
   text-align: center;
-  background-image: url('http://res.cloudinary.com/dgordon1/image/upload/v1458565220/studio_q3ph93.jpg');
+  background: url('http://res.cloudinary.com/dgordon1/image/upload/v1458565220/studio_q3ph93.jpg')center center;
   height: 60vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */ 
   background-size: cover !important;
@@ -13,7 +13,7 @@
 .banner_upload {
   color: white;
   text-align: center;
-  background-image: url('http://res.cloudinary.com/dgordon1/image/upload/c_scale,h_2399/v1458564793/fader_nm5vow.jpg');
+  background: url('http://res.cloudinary.com/dgordon1/image/upload/c_scale,h_2399/v1458564793/fader_nm5vow.jpg')center center;
   height: 60vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */ 
   background-size: cover !important;

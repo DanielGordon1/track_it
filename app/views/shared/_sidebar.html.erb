@@ -39,9 +39,8 @@
     <%= link_to('Logout', destroy_user_session_path, :method => :delete) %> 
          
     <% else %>
-   <i class="fa fa-lock"></i>
-    <%= link_to('Login', new_user_session_path)  %>  
-    
+      <i class="fa fa-lock"></i>
+      <%= link_to('Login', "#", "data-toggle" => "modal", "data-target" => "#user-signin")  %>  
     <% end %>
   </div>
 </div>

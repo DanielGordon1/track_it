@@ -26,7 +26,7 @@ class TracksController < ApplicationController
   end
 
   def upvote
-    if current_user.votes.where(user: current_user).exists?
+    if current_user.votes.where(user: current_user)
        @track.votes.where(user: current_user).first.destroy
        redirect_to root_path(anchor: "hot-tracks")
     else 

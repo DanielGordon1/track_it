@@ -1,11 +1,11 @@
 <header id="top" class="header">
   <div class="header-content text-center">
    <div class="test">
-   <a href="#music-tabs" class="fa fa-play fa-5x"></a>
-    <a href="#Bar" class="fa fa-pause fa-5x" data-toggle="collapse"></a>
-    <!-- <h2>Track it </h2> -->
-  </div>
-</div>
+     <a href="#music-tabs" class="fa fa-play fa-5x"></a>
+     <a href="#Bar" class="fa fa-pause fa-5x" data-toggle="collapse"></a>
+     <!-- <h2>Track it </h2> -->
+   </div>
+ </div>
 </header>
 
 <div class="tabs-home" id="music-tabs">
@@ -43,6 +43,16 @@
        <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
 
         <%=link_to track.user.username, profile_path %>
+
+        <script src="<%= track.soundcloud_permalink_url %>"></script>
+        <div class="player">
+          <span class='info'></span>
+          <div class="waveform"></div>
+          <div class="position"></div>
+        </div>
+        <iframe class="sc-widget" src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}" %>>
+        </iframe>
+
       </ul>
     </div>
     <% end %>

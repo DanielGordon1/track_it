@@ -1,11 +1,10 @@
 <div class="banner_track">
   <div class="banner-content">
-    <div class="row comments">
+  <div class="container">
+    <div class="row">
 
-      <div class="col-lg-12 text-center">
-        <h1><%= @track.name %></h1>
-        <%= pluralize @track.comments.size, "Comment" %>
-
+      <div class="col-sm-4 text-left">
+           <%= pluralize @track.comments.size, "Comment" %>
         <div id="comments">
           <% if @track.comments.blank? %>
           Be the first to leave a comment for <%= @track.name %> by <%= @track.user.username %>
@@ -14,14 +13,19 @@
           <%= render 'comments/show', comment: comment %>
           <% end %>
           <% end %>
-
         </div>
       </div>
-    </div>
-    <div class="col-xs-12">
+    <div class="col-sm-4 ">
       <div class="how-it-works-bucket">
+       <h1><%= @track.name %></h1>
+
        <%= render 'comments/form', track: @track, comment: @comment %>
+       </div>
+     </div>
+     <div class="col-sm-4 ">
      </div>
     </div>
     </div>
     </div>
+    </div>
+

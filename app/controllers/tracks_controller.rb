@@ -13,7 +13,20 @@ class TracksController < ApplicationController
 
   def create
     @track = current_user.tracks.new(track_params)
+
     if @track.save
+      client = Soundcloud.new(access_token: current_user.token)
+      sc_track = client.post('/tracks',
+        track: {
+          title: @track.name,
+          asset_data: params[:file]
+        }
+      )
+
+      @track.update(
+        soundcloud_id: sc_track.id
+      )
+
       redirect_to track_path(@track)
     else
       render :new
@@ -29,7 +42,7 @@ class TracksController < ApplicationController
     if current_user.votes.where(user: current_user).exists?
        @track.votes.where(user: current_user).first.destroy
        redirect_to root_path(anchor: "hot-tracks")
-    else 
+    else
        @track.votes.where(user: current_user).first_or_create
        redirect_to root_path(anchor: "hot-tracks")
    end

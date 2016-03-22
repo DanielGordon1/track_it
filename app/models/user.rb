@@ -14,28 +14,33 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: :true
 
   def self.find_for_soundcloud_oauth(auth)
-    where(uid: auth[:infos].uid).first_or_create do |user|
-      # user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]  # Fake password for validation
+    uid = auth[:infos].id
 
-      # credentials
-      user.token = auth[:credentials].access_token
-      user.refresh_token = auth[:credentials].refresh_token
-      user.token_expires_at = Time.current + auth[:credentials].expires_in.seconds
-
-      # user infos
-      user.uid = auth[:infos].id
-      user.city = auth[:infos].city
-      user.username = auth[:infos].username
-      user.photo_url = auth[:infos].avatar_url
-      user.country = auth[:infos].country
-      user.description = auth[:infos].description
-      user.first_name = auth[:infos].first_name
-      user.last_name = auth[:infos].last_name
-      user.followers_count = auth[:infos].followers_count
-      user.public_favorites_count = auth[:infos].public_favorites_count
-      user.upload_seconds_left = auth[:infos].quota.upload_seconds_left
+    user = where(uid: uid).first_or_initialize do |user|
+      user.uid = uid
+      user.password = Devise.friendly_token[0,20] # Fake password for validation
     end
+
+    # credentials
+    user.token = auth[:credentials].access_token
+    user.refresh_token = auth[:credentials].refresh_token
+    user.token_expires_at = Time.current + auth[:credentials].expires_in.seconds
+
+    # user infos
+    user.city = auth[:infos].city
+    user.username = auth[:infos].username
+    user.photo_url = auth[:infos].avatar_url
+    user.country = auth[:infos].country
+    user.description = auth[:infos].description
+    user.first_name = auth[:infos].first_name
+    user.last_name = auth[:infos].last_name
+    user.followers_count = auth[:infos].followers_count
+    user.public_favorites_count = auth[:infos].public_favorites_count
+    user.upload_seconds_left = auth[:infos].quota.upload_seconds_left
+
+    user.save
+
+    return user
   end
 
   private

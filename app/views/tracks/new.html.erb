@@ -2,14 +2,14 @@
 <div class="banner-content"><h1>Hey <%= @current_user.username.capitalize %></h1></div>
 </div>
 <div class= "container form padded">
-  <div class= "row well">  
+  <div class= "row well">
     <h1>Upload your Track</h1>
 
-    <%= simple_form_for @track do |f| %>
+    <%= simple_form_for @track, html: { multipart: true } do |f| %>
     <%= f.input :name %>
     <%= f.input :version %> <!-- input for version is using enumerize, see track model -->
     <%= f.input :genre %>
-
+    <%= file_field_tag :file %>
     <%= f.button :submit %>
 
     <% end %>

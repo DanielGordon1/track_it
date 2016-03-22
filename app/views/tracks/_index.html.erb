@@ -1,25 +1,22 @@
-<div class= "container product-container">
-  <h3 class="readme-header">Hot tracks</h3>
-  <% @tracks.each do |track| %>
-  <div class="product">
-    <div class='product-upvote'>
-      <div class="product-arrow"></div>
-      <%= button_to '+1', upvote_track_path(track), method: :patch, class: "product-arrow" %>
-      <%= (track.votes.count) %>
+<header id="top" class="header">
+    <div class="header-content text-center">
+     <div class="test">
+        <a href="#sub" class="fa fa-play fa-5x"></a>
+        <a href="#Bar" class="fa fa-pause fa-5x" data-toggle="collapse"></a>
+        <!-- <h2>Track it </h2> -->
+        </div>
     </div>
-    <!-- TODO: Add photo off track -->
-   <%= image_path '' , class: "product-image hidden-xs"%>
-    <div class='product-body'>
-     <h5>
-       <%= link_to track.name, track_path(track) %></h5>
+</header>
 
-       <p><%= track.genre %></p>
-       <small><%= track.version %></small>
-     </div>
-     <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-      
-      <%=link_to track.user.username, profile_path %>
-  </ul>
-</div>
-<% end %>
-</div>
+  <div class="tabs tabs-home">
+    <a class="tab tab-home" data-target="#bio">
+      <h3>Hot</h3>
+    </a>
+    <a class="tab tab-home active" data-target="#projects">
+      <h3>Trending</h3>
+    </a>
+    <a class="tab tab-home" data-target="#contact">
+      <h3>Fresh</h3>
+    </a>
+  </div>
+

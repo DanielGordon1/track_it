@@ -1,0 +1,34 @@
+.track-card-container {
+  min-height: 100vh;
+  background: #D6D6D6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.track-card {
+  height: 400px;
+  max-width: 600px;
+  width: 100%;
+  background: white;
+  display: flex;
+}
+
+.track-card-main {
+  flex: 1;
+  background: green;
+}
+
+.track-card-sidebar {
+  width: 250px;
+  overflow: scroll;
+}
+
+.track-card-container {
+  background-color: red;
+}
+
+.tracks-show {
+  #footer { display: none }
+}

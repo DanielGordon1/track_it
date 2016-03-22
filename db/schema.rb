@@ -101,9 +101,9 @@ ActiveRecord::Schema.define(version: 20160322104323) do
     t.integer  "upload_seconds_left"
     t.integer  "uid"
     t.string   "token"
+    t.boolean  "admin",                  default: false, null: false
     t.string   "refresh_token"
     t.datetime "token_expires_at"
-    t.boolean  "admin",                  default: false, null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

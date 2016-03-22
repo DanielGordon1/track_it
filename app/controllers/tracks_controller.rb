@@ -2,6 +2,9 @@ class TracksController < ApplicationController
 
   before_action :find_track, only: [:show, :upvote, :downvote, :destroy]
 
+  def index
+    @tracks = Track.all
+  end
 
   def show
     @comment = Comment.new
@@ -25,15 +28,15 @@ class TracksController < ApplicationController
 
       @track.update(
         soundcloud_id: sc_track.id,
-        soundcloud_created_at: sc_track.created_at,
+        # soundcloud_created_at: sc_track.created_at,
         soundcloud_user_id: sc_track.user_id,
         soundcloud_duration: sc_track.duration,
-        soundcloud_tag_list: sc_track.tag_list,
-        soundcloud_genre: sc_track.genre,
-        soundcloud_description: sc_track.description,
+        # soundcloud_tag_list: sc_track.tag_list,
+        # soundcloud_genre: sc_track.genre,
+        # soundcloud_description: sc_track.description,
         soundcloud_title: sc_track.title,
         soundcloud_track_type: sc_track.track_type,
-        soundcloud_license: sc_track.license,
+        # soundcloud_license: sc_track.license,
         soundcloud_user_playback_count: sc_track.user_playback_count,
         soundcloud_permalink_url: sc_track.permalink_url,
         soundcloud_stream_url: sc_track.stream_url,
@@ -45,7 +48,7 @@ class TracksController < ApplicationController
         soundcloud_comment_count: sc_track.comment_count,
         soundcloud_uri: sc_track.uri,
         soundcloud_artwork_url: sc_track.artwork_url,
-        soundcloud_downloadable: sc_track.downloadable,
+        # soundcloud_downloadable: sc_track.downloadable,
         soundcloud_user_favorite: sc_track.user_favorite,
       )
 
@@ -67,8 +70,8 @@ class TracksController < ApplicationController
     else
        @track.votes.where(user: current_user).first_or_create
        redirect_to root_path(anchor: "hot-tracks")
-   end
- end
+    end
+  end
 
 private
 

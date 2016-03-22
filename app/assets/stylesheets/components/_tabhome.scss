@@ -1,7 +1,8 @@
 .tabs-home {
   background: none;
   display: flex;
-  padding: 0px 0px 0 0px !important; 
+  padding: 0px 0px 0 0px !important;
+  // position: absolute bottom center;
 }
 .tabs-home a {
   color: white;
@@ -20,10 +21,10 @@
   margin-bottom: 0;
 }
 .tab-home {
-  background: #666666;
+  background: rgba(102, 102, 102, 0.5);
   flex: 0 0 33.33%;
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .tabhome:first-child {

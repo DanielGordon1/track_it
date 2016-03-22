@@ -1,17 +1,17 @@
 <div class="banner_upload">
-<div class="banner-content"><h1>Hey <%= @current_user.username.capitalize %></h1></div>
-</div>
+
+<div class="banner-content text-center"></div>
 <div class= "container form padded">
-  <div class= "row well">  
-    <h1>Upload your Track</h1>
+  <div class= "row">
+
+    <h1><h1>Hey <%= @current_user.username.capitalize %></h1>Upload your Track</h1>
 
     <%= simple_form_for @track do |f| %>
     <%= f.input :name %>
     <%= f.input :version %> <!-- input for version is using enumerize, see track model -->
     <%= f.input :genre %>
-
     <%= f.button :submit %>
-
     <% end %>
   </div>
+</div>
 </div>

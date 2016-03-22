@@ -14,7 +14,7 @@
   color: white;
   text-align: center;
   background: url('http://res.cloudinary.com/dgordon1/image/upload/c_scale,h_2399/v1458564793/fader_nm5vow.jpg')center center;
-  height: 60vh;
+  height: 100vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */ 
   background-size: cover !important;
   display: flex;
@@ -27,6 +27,7 @@
     font-size: 50px;
     font-weight: bold;
     text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0px;
   }
   p  {
     font-size: 20px;

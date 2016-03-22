@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160321103630) do
+ActiveRecord::Schema.define(version: 20160322104323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,8 +47,31 @@ ActiveRecord::Schema.define(version: 20160321103630) do
     t.string   "genre"
     t.string   "version"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "soundcloud_id"
+    t.datetime "soundcloud_created_at"
+    t.integer  "soundcloud_user_id"
+    t.integer  "soundcloud_duration"
+    t.string   "soundcloud_tag_list"
+    t.string   "soundcloud_genre"
+    t.string   "soundcloud_description"
+    t.string   "soundcloud_title"
+    t.string   "soundcloud_track_type"
+    t.string   "soundcloud_license"
+    t.integer  "soundcloud_user_playback_count"
+    t.string   "soundcloud_permalink_url"
+    t.string   "soundcloud_stream_url"
+    t.string   "soundcloud_download_url"
+    t.string   "soundcloud_waveform_url"
+    t.integer  "soundcloud_playback_count"
+    t.integer  "soundcloud_download_count"
+    t.integer  "soundcloud_favoritings_count"
+    t.integer  "soundcloud_comment_count"
+    t.string   "soundcloud_uri"
+    t.string   "soundcloud_artwork_url"
+    t.boolean  "soundcloud_downloadable"
+    t.boolean  "soundcloud_user_favorite"
   end
 
   add_index "tracks", ["user_id"], name: "index_tracks_on_user_id", using: :btree
@@ -78,9 +101,9 @@ ActiveRecord::Schema.define(version: 20160321103630) do
     t.integer  "upload_seconds_left"
     t.integer  "uid"
     t.string   "token"
-    t.boolean  "admin",                  default: false, null: false
     t.string   "refresh_token"
     t.datetime "token_expires_at"
+    t.boolean  "admin",                  default: false, null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

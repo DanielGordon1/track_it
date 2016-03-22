@@ -1,10 +1,13 @@
 
 <div class="profile-header-wrapper">
+
   <div class="container profile-header-container text-center">
     <div class="profile-header-infos">
-      <!-- <img src="trump.jpeg" alt=""> -->
+
+      <div class ="profile.avatar">
       <%= cl_image_tag("trump_d2iwhc.jpg")%>
       <h1><%= current_user.username.capitalize %></h1>
+      </div>
       <h2></h2>
     </div>
     <div class="tabs">
@@ -23,14 +26,12 @@
 
 <div class="container text-center">
   <div class="tab-content" id="bio">
-    <p>List of your upvoted Tracks.</p>
-    <%= render 'tracks/index' %>
+    <h4> Upvotes </h4>
+    <!-- TODO : Link to profile page of the track -->
   </div>
   <div class="tab-content hidden" id="projects">
     <p>List of your Comments on Tracks.</p>
     <!-- TODO : Link to comments page of the track -->
-
-
   </div>
   <br>
   <div class="tab-content hidden" id="contact">

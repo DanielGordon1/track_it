@@ -1,15 +1,22 @@
 .profile-header-wrapper {
-  background-image: url('https://unsplash.it/1400/300/?random');
+  background-image: url('https://unsplash.it/1600/600/?random');
 }
+
+.profile-header-container {
+  // padding-top: 300px;
+}
+
 .profile-header-container img {
-  width: 100px;
-  border-radius: 25%;
+  width: 125px;
+  border-radius: 10px;
+  float: left;
 }
 .profile-header-container h1 {
   color: white;
   font-size: 28px;
   font-weight: bold;
   letter-spacing: -1px;
+  padding-top: 100px;
 }
 .profile-header-container h2 {
   color: white;
@@ -21,6 +28,7 @@
 }
 .profile-header-infos {
   padding: 20px 0;
+  padding-bottom: 150px;
 }
 
 .tabs {
@@ -31,3 +39,6 @@
   background: grey;
   opacity: 0.4;
 }
+
+
+// override bootstrap classes

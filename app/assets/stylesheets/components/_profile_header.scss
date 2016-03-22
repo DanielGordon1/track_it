@@ -1,5 +1,5 @@
 .profile-header-wrapper {
-  background: url ;
+  background-image: url('https://unsplash.it/1400/300/?random');
 }
 .profile-header-container img {
   width: 100px;
@@ -21,4 +21,13 @@
 }
 .profile-header-infos {
   padding: 20px 0;
+}
+
+.tabs {
+  background: none;
+}
+
+.tab {
+  background: grey;
+  opacity: 0.4;
 }

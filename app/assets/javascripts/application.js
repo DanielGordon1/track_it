@@ -4,4 +4,4 @@
 //= require comments
 //= require sidebar
 //= require tabs
-
+//= require profile

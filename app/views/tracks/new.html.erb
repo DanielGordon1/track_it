@@ -1,9 +1,9 @@
 <div class="banner_upload">
-<div class="banner-content"><h1>Hey <%= @current_user.username.capitalize %></h1></div>
-</div>
+
+<div class="banner-content text-center"></div>
 <div class= "container form padded">
-  <div class= "row well">
-    <h1>Upload your Track</h1>
+  <div class= "row">
+    <h1>Hey <%= @current_user.username.capitalize %> Upload your Track</h1>
 
     <%= simple_form_for @track, html: { multipart: true } do |f| %>
     <%= f.input :name %>
@@ -11,7 +11,7 @@
     <%= f.input :genre %>
     <%= file_field_tag :file %>
     <%= f.button :submit %>
-
     <% end %>
   </div>
+</div>
 </div>

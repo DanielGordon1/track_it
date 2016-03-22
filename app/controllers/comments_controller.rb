@@ -15,8 +15,12 @@ class CommentsController < ApplicationController
         format.js  # <-- will render `app/views/comments/create.js.erb`
       end
     end
-
   end
+
+  def show
+    @comment = track.comments
+  end
+
 
   private
 

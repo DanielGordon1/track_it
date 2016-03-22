@@ -15,7 +15,6 @@ class SoundcloudController < ApplicationController
       sign_in_and_redirect user, event: :authentication
       flash[:notice] = "Successfully signed in with Soundcloud" if is_navigational_format?
     else
-      raise
       flash[:alert] = "Unable to sign in with Soundcloud. Please try again"
       redirect_to new_user_session_url
     end
@@ -27,7 +26,7 @@ class SoundcloudController < ApplicationController
     @client ||= Soundcloud.new(
       client_id:     ENV['SOUNDCLOUD_ID'],
       client_secret: ENV['SOUNDCLOUD_SECRET'],
-      redirect_uri:  'http://localhost:3001/soundcloud/callback'
+      redirect_uri:  soundcloud_callback_url
     )
   end
 end

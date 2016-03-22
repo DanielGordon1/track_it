@@ -1,9 +1,15 @@
 .profile-header-wrapper {
-  background-image: url('https://unsplash.it/1400/300/?random');
+  background-image: url('https://unsplash.it/1600/600/?random');
 }
+
+.profile-header-container {
+  padding-top: 300px;
+}
+
 .profile-header-container img {
-  width: 100px;
-  border-radius: 25%;
+  width: 125px;
+  border-radius: 10px;
+  float: left;
 }
 .profile-header-container h1 {
   color: white;
@@ -31,3 +37,6 @@
   background: grey;
   opacity: 0.4;
 }
+
+
+// override bootstrap classes

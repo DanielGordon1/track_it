@@ -74,18 +74,18 @@ a:hover, a:focus {
             overflow: auto;
             top: 0px;
             right: -275px;
-            width: 275px;
+            width: 240px;
             opacity: 0;
             padding: 20px 0px;
-            height: 100%;
-            background-color: $dullWhite;
-           
+            height: 80%;
+            background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 1)), to(rgba(0, 0, 0, 0)));
             transition: all 350ms $easing;
         }
 
         #box.active {
             right: 0px;
             opacity: 0.9;
+
         }
 
         #items {

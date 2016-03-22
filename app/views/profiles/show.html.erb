@@ -1,85 +1,58 @@
 
-              <div class="profile-header-wrapper">
+<div class="profile-header-wrapper">
 
-                <div class="container profile-header-container text-center">
-                  <div class="profile-header-infos">
+  <div class="container profile-header-container text-center">
+    <div class="profile-header-infos">
 
-                    <div class ="profile.avatar">
-                      <%= image_tag "trump.jpeg", class:"avatar-bordered" %>
-                      <h1><%= current_user.username.capitalize %></h1>
-                    </div>
-                    <h2></h2>
-                  </div>
-                  <div class="tabs">
-                    <a class="tab active" data-target="#bio">
-                      <h3>Upvotes</h3>
-                    </a>
-                    <a class="tab" data-target="#projects">
-                      <h3>Comments</h3>
-                    </a>
-                    <a class="tab" data-target="#contact">
-                      <h3>Tracks</h3>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="container text-center">
-                <div class="tab-content" id="bio">
-                  <h4> Upvotes </h4>
-                  <!-- TODO : Link to profile page of the track -->
-              </div>
-              <div class="tab-content hidden" id="projects">
-                <p>List of your Comments on Tracks.</p>
-                <!-- TODO : Link to comments page of the track -->
-              </div>
-              <br>
-              <div class="tab-content hidden" id="contact">
-               <button type="button" class="btn btn-secondary"><%= link_to 'Add a new track', new_track_path%></button> 
-               <br>
-               <br>
-               <p>Tracks uploaded by you.</p>
-
-<section>
-<script src='//w.soundcloud.com/player/api.js'></script>
-
-
-  <div class='player'>
-    <div class='art'></div>
-    <div class='info'>
-      <div class='title'></div>
-      <div class='song'></div>
-      <div class='progress'>
-        <div class='progress-bar'></div>
+      <div class ="profile.avatar">
+        <%= image_tag "trump.jpeg", class:"avatar-bordered" %>
+        <h1><%= current_user.username.capitalize %></h1>
       </div>
+      <h2></h2>
     </div>
-    <div class='controls'>
-      <button class='play glyphicon glyphicon-play'></button>
-      <button class='backward glyphicon glyphicon glyphicon-backward'></button>
-      <button class='forward glyphicon glyphicon-forward'></button>
-      <div class="settings glyphicon glyphicon-cog"></div>
+    <div class="tabs">
+      <a class="tab active" data-target="#bio">
+        <h3>Upvotes</h3>
+      </a>
+      <a class="tab" data-target="#projects">
+        <h3>Comments</h3>
+      </a>
+      <a class="tab" data-target="#contact">
+        <h3>Tracks</h3>
+      </a>
     </div>
   </div>
-  <iframe class="sc-widget" src="//w.soundcloud.com/player/?url=https://soundcloud.com/wata-104408421/sledge-2"></iframe>
-  </section>
-  <section>
+</div>
+
+
+<div class="container text-center">
+  <div class="tab-content" id="bio">
+    <h4> Upvotes </h4>
+    <!-- TODO : Link to profile page of the track -->
+  </div>
+  <div class="tab-content hidden" id="projects">
+    <p>List of your Comments on Tracks.</p>
+    <!-- TODO : Link to comments page of the track -->
+  </div>
+  <br>
+  <div class="tab-content hidden" id="contact">
+   <button type="button" class="btn btn-secondary"><%= link_to 'Add a new track', new_track_path%></button> 
+   <br>
+   <br>
+   <p>Tracks uploaded by you.</p>
   
-<script src='//w.soundcloud.com/player/api.js'></script>
+    <div class="post text-center">  
 
+      <h2>March 10</h2>
 
+      <a href="http://soundcloud.com/wata-104408421" class="sc-player"></a>
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/soundcloud.player.api.js"></script>
+    <script type="text/javascript" src="../js/sc-player.js"></script>
+    </div>
 
-                 <script src='//w.soundcloud.com/player/api.js'></script>
-                  <div class="player">
-                    <span class='info'></span>
-                    <div class="waveform"></div>
-                    <div class="position"></div>  
-                  </div>
-
-                  <iframe class="sc-widget" src="//w.soundcloud.com/player/?url=//soundcloud.com/wata-104408421/sledge-2">
-                  </iframe>
-
-              </div>
-              </div>
+</div>
+</div>
 
 

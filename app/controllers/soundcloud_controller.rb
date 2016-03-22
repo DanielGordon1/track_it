@@ -26,7 +26,7 @@ class SoundcloudController < ApplicationController
     @client ||= Soundcloud.new(
       client_id:     ENV['SOUNDCLOUD_ID'],
       client_secret: ENV['SOUNDCLOUD_SECRET'],
-      redirect_uri:  'http://localhost:3001/soundcloud/callback'
+      redirect_uri:  soundcloud_callback_url
     )
   end
 end

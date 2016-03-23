@@ -25,6 +25,8 @@
 <div class="tab-content" id="trending">
   <div class= "container product-container">
     <% @tracks.each do |track| %>
+      <% if track.soundcloud_permalink_url != nil %>
+
     <div class="product">
       <div class='product-upvote'>
         <div class="product-arrow"></div>
@@ -55,6 +57,7 @@
 
       </ul>
     </div>
+      <% end %>
     <% end %>
   </div>
 </div>

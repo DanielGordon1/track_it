@@ -3,7 +3,7 @@
   <div class="container profile-header-container text-center">
     <div class="profile-header-infos">
       <!-- <img src="trump.jpeg" alt=""> -->
-      <%= image_tag "trump.jpeg", class:"avatar-bordered" %>
+      <%= cl_image_tag "trump_d2iwhc.jpg", class:"avatar-bordered" %>
       <h1><%= @tracker.username.capitalize %></h1>
       <h2></h2>
     </div>
@@ -33,7 +33,7 @@
     <% @tracker.comments.each do |comment| %>
       <% counter += 1 %>
       <li>
-        <%= "#{counter}" + " sdfsdf" + "#{comment.content}" %>
+        <%= "#{counter}" + "#{comment.content}" %>
       </li>
     <% end %>
 

@@ -2,8 +2,6 @@ class ProfilesController < ApplicationController
 
  def show
     @profile = current_user
-    @tracks = current_user.tracks
-    @comments = current_user.comments
   end
 
   def edit

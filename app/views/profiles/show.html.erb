@@ -11,13 +11,13 @@
       <h2></h2>
     </div>
     <div class="tabs">
-      <a class="tab active" data-target="#bio">
+      <a class="tab active" data-target="#votes">
         <h3>Upvotes</h3>
       </a>
-      <a class="tab" data-target="#projects">
+      <a class="tab" data-target="#comments">
         <h3>Comments</h3>
       </a>
-      <a class="tab" data-target="#contact">
+      <a class="tab" data-target="#tracks">
         <h3>Tracks</h3>
       </a>
     </div>
@@ -26,21 +26,41 @@
 
 
 <div class="container text-center">
-  <div class="tab-content" id="bio">
+  <div class="tab-content" id="votes">
     <h4> Upvotes </h4>
-    <!-- TODO : Link to profile page of the track -->
+    <!-- TODO : Link to profile page of the track 
+-->
+  <% trackz = [] %>
+  <% current_user.votes.each do |vote| %>
+  <% trackz << Track.find_by_id(vote.track_id) %>
+  <% end %>
+
+  <% trackz.each do |track| %>
+    <% if track.soundcloud_permalink_url != nil %>
+      <script src="<%= track.soundcloud_permalink_url %>"></script>
+      <div class="player">
+        <span class='info'></span>
+        <div class="waveform"></div>
+        <div class="position"></div>
+      </div>
+      <iframe class="sc-widget" src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}" %>>
+      </iframe>
+    <% end %>
+    <% end %>
   </div>
-  <div class="tab-content hidden" id="projects">
+
+
+  <div class="tab-content hidden" id="comments">
     <p>List of your Comments on Tracks.</p>
     <!-- TODO : Link to comments page of the track -->
   </div>
-  <br>
-  <div class="tab-content hidden" id="contact">
+
+
+  <div class="tab-content hidden" id="tracks">
    <button type="button" class="btn btn-secondary"><%= link_to 'Add a new track', new_track_path%></button>
    <br>
    <br>
    <p>Tracks uploaded by you.</p>
-
    <% current_user.tracks.each do |track| %>
     <% if track.soundcloud_permalink_url != nil %>
       <script src="<%= track.soundcloud_permalink_url %>"></script>
@@ -53,5 +73,5 @@
       </iframe>
     <% end %>
   <% end %>
-</div>
+  </div>
 </div>

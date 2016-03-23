@@ -42,15 +42,18 @@
          <p><%= track.genre %></p>
          <small><%= track.version %></small>
        </div>
-       <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-        <script src="<%= track.soundcloud_permalink_url %>"></script>
+      <script src="<%= track.soundcloud_permalink_url %>"></script>
         <div class="player">
           <span class='info'></span>
           <div class="waveform"></div>
           <div class="position"></div>
         </div>
-        <iframe class="sc-widget" src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}" %>>
+       
+        <iframe allowtransparency="true" scrolling="no" frameborder="no" src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}"  %> style=".compactSound {
+   padding: 0px }" > 
         </iframe>
+       <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
+    
 
         <%=link_to track.user.username, profile_path %>
 

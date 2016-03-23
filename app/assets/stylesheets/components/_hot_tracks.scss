@@ -4,8 +4,16 @@ body {
 
 .product-container{
   width:600px;
-
 }
+
+.player{
+max-width: 310px;
+}
+ 
+.player iframe{
+height: 160px;
+}
+
 
 .product {
   display: flex;

@@ -27,15 +27,10 @@
   flex:         1;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   position: relative;
-
-  .player-track-main{
-    position: absolute;
-    }
-
-  .sc-widget{
-    height: 400px;
-    width: auto;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 
   .track-card-title{
     position: absolute;

@@ -1,14 +1,20 @@
+body {
+  background-color: lightgrey;
+}
+
 .product-container{
-  width:950px;
+  width:600px;
 
 }
 
 .product {
   display: flex;
   align-items: center;
-  padding: 20px;
+  // padding: 20px;
   border-radius: 3px;
   transition: all 0.15s ease;
+  margin-left: 20px;
+  padding-left: 20px;
 }
 
 /* Body design */

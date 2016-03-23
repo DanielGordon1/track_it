@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :tracks, dependent: :destroy
   has_many :votes, dependent: :destroy
 
-  validates :first_name, :last_name, :username, presence: :true
+  validates :username, presence: :true
   validates :username, uniqueness: :true
 
   def self.find_for_soundcloud_oauth(auth)

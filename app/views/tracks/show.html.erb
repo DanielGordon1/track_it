@@ -6,15 +6,19 @@
       </div>
     </div>
     <div class="track-card-sidebar">
-    <%= pluralize @track.comments.size, "comment" %>
+      <span class="track-comment-size"><%= pluralize @track.comments.size, "comment" %></span>
       <div class='track-card-comments dont-break-out'>
-        <% if @track.comments.blank? %>
-          Be the first to leave a comment for <%= @track.name %> by <%= @track.user.username %>
-        <% else %>
-          <% @track.comments.each do |comment| %>
-            <%= render 'comments/show', comment: comment %>
+        <div id="comments">
+          <% if @track.comments.blank? %>
+            <p class="no-comments">
+              Be the first to leave a comment for <%= @track.name %> by <%= @track.user.username %>
+            </p>
+          <% else %>
+            <% @track.comments.each do |comment| %>
+              <%= render 'comments/show', comment: comment %>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
       <div class='track-card-sidebar-footer'>
         <%= render 'comments/form', track: @track, comment: @comment %>

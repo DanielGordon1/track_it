@@ -1,10 +1,13 @@
 <div class="track-card-container">
   <div class="track-card">
     <div class="track-card-main">
-
+      <div class='track-card-title'>
+        <%= @track.name %>
+      </div>
     </div>
     <div class="track-card-sidebar">
-      <div class='track-card-comments'>
+    <%= pluralize @track.comments.size, "comment" %>
+      <div class='track-card-comments dont-break-out'>
         <% if @track.comments.blank? %>
           Be the first to leave a comment for <%= @track.name %> by <%= @track.user.username %>
         <% else %>
@@ -12,6 +15,9 @@
             <%= render 'comments/show', comment: comment %>
           <% end %>
         <% end %>
+      </div>
+      <div class='track-card-sidebar-footer'>
+        <%= render 'comments/form', track: @track, comment: @comment %>
       </div>
     </div>
   </div>

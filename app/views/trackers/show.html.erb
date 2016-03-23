@@ -27,7 +27,19 @@
   </div>
   <div class="tab-content hidden" id="projects">
     <p>List of Comments on Tracks.</p>
+
+
+    <% counter = 0 %>
+    <% @tracker.comments.each do |comment| %>
+      <% counter += 1 %>
+      <li>
+        <%= "#{counter}" + " sdfsdf" + "#{comment.content}" %>
+      </li>
+    <% end %>
+
   </div>
+
+
   <div class="tab-content hidden" id="contact">
     <p>Public page with tracks uploaded by this person.</p>
 

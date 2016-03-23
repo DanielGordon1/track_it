@@ -29,51 +29,64 @@
   <div class="tab-content" id="votes">
     <h4> Upvotes </h4>
     <!-- TODO : Link to profile page of the track 
--->
+  -->
   <% trackz = [] %>
   <% current_user.votes.each do |vote| %>
   <% trackz << Track.find_by_id(vote.track_id) %>
   <% end %>
 
   <% trackz.each do |track| %>
-    <% if track.soundcloud_permalink_url != nil %>
+  <% if track.soundcloud_permalink_url != nil %>
+  <div class="product">
+    <div class='product-upvote'>
+      <div class="product-arrow"></div>
+        <%= button_to '+1', upvote_track_path(track), method: :patch, class: "product-arrow" %>
+        <%= (track.votes.count) %>
+    </div>
+    <div class='product-body'>
+     <h5><%= link_to track.name, track_path(track) %></h5>
+      <p><%= track.genre %></p>
+      <small><%= track.version %></small>
+    </div>
+    <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
       <script src="<%= track.soundcloud_permalink_url %>"></script>
       <div class="player">
         <span class='info'></span>
         <div class="waveform"></div>
         <div class="position"></div>
       </div>
-      <iframe class="sc-widget" src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}" %>>
-      </iframe>
-    <% end %>
-    <% end %>
+      <iframe class="sc-widget" src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}" %>></iframe>
+      <% end %>
+      <% end %>
+    </ul>
   </div>
+</div>
 
 
-  <div class="tab-content hidden" id="comments">
-    <p>List of your Comments on Tracks.</p>
-    <!-- TODO : Link to comments page of the track -->
-  </div>
+<div class="tab-content hidden" id="comments">
+  <p>List of your Comments on Tracks.</p>
+  <!-- TODO : Link to comments page of the track -->
+</div>
 
 
-  <div class="tab-content hidden" id="tracks">
-   <button type="button" class="btn btn-secondary"><%= link_to 'Add a new track', new_track_path%></button>
-   <br>
-   <br>
-   <p>Tracks uploaded by you.</p>
-   <% current_user.tracks.each do |track| %>
-    <% if track.soundcloud_permalink_url != nil %>
-      <script src="<%= track.soundcloud_permalink_url %>"></script>
-      <div class="player">
-        <span class='info'></span>
-        <div class="waveform"></div>
-        <div class="position"></div>
-      </div>
-      <iframe class="sc-widget" src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}" %>>
-      </iframe>
-    <% end %>
-  <% end %>
-  </div>
+<div class="tab-content hidden" id="tracks">
+ <button type="button" class="btn btn-secondary"><%= link_to 'Add a new track', new_track_path%></button>
+ <br>
+ <br>
+ <p>Tracks uploaded by you.</p>
+ <% current_user.tracks.each do |track| %>
+ <% if track.soundcloud_permalink_url != nil %>
+ <script src="<%= track.soundcloud_permalink_url %>"></script>
+ <div class="player">
+  <span class='info'></span>
+  <div class="waveform"></div>
+  <div class="position"></div>
+</div>
+<iframe class="sc-widget" src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}" %>>
+</iframe>
+<% end %>
+<% end %>
+</div>
 </div>
 
 

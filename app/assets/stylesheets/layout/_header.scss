@@ -15,9 +15,10 @@
 .header-content {
   a {
     text-decoration: none;
-    color: black;
+    color: grey;
+    opacity: 0.6;
     justify-content:center;
-    margin-top: 350px;
+    // margin-top: 350px;
 } }
 
 .fa-pause:before {

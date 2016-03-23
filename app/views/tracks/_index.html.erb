@@ -43,9 +43,6 @@
          <small><%= track.version %></small>
        </div>
        <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-
-        <%=link_to track.user.username, profile_path %>
-
         <script src="<%= track.soundcloud_permalink_url %>"></script>
         <div class="player">
           <span class='info'></span>
@@ -54,6 +51,8 @@
         </div>
         <iframe class="sc-widget" src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}" %>>
         </iframe>
+
+        <%=link_to track.user.username, profile_path %>
 
       </ul>
     </div>

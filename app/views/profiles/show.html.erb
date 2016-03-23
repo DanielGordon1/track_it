@@ -5,8 +5,8 @@
     <div class="profile-header-infos">
 
       <div class ="profile.avatar">
-      <%= image_tag "trump.jpeg", class:"avatar-bordered" %>
-      <h1><%= current_user.username.capitalize %></h1>
+        <%= image_tag "trump.jpeg", class:"avatar-bordered" %>
+        <h1><%= current_user.username.capitalize %></h1>
       </div>
       <h2></h2>
     </div>
@@ -36,9 +36,22 @@
   </div>
   <br>
   <div class="tab-content hidden" id="contact">
-   <button type="button" class="btn btn-secondary"><%= link_to 'Add a new track', new_track_path%></button> 
+   <button type="button" class="btn btn-secondary"><%= link_to 'Add a new track', new_track_path%></button>
    <br>
    <br>
    <p>Tracks uploaded by you.</p>
- </div>
+
+   <% current_user.tracks.each do |track| %>
+    <% if track.soundcloud_permalink_url != nil %>
+      <script src="<%= track.soundcloud_permalink_url %>"></script>
+      <div class="player">
+        <span class='info'></span>
+        <div class="waveform"></div>
+        <div class="position"></div>
+      </div>
+      <iframe class="sc-widget" src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}" %>>
+      </iframe>
+    <% end %>
+  <% end %>
+</div>
 </div>

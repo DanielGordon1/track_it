@@ -26,6 +26,23 @@
 .track-card-main {
   flex:         1;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+
+  .player-track-main{
+    position: absolute;
+    }
+
+  .sc-widget{
+    height: 400px;
+    width: auto;
+  }
+
+  .track-card-title{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 30px;
+  }
 }
 
 .track-card-sidebar {
@@ -59,7 +76,7 @@
       .btn {
         border: 0;
         display: block;
-        background: #00FFA1;
+        background: #019875;
         flex: 1;
         border-radius: 0;
         color: white;
@@ -73,7 +90,7 @@
 }
 
 .track-card-comments {
-  padding: 20px;
+  padding: 10px;
   overflow: scroll;
   flex: 1;
 
@@ -82,6 +99,20 @@
   }
 }
 
+
 .tracks-show {
   #footer { display: none }
+}
+
+.trackers-name{
+
+}
+
+.trackers-comment{
+  font-size: 14px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  color: #A09C9C;
+  line-height: 0;
+
 }

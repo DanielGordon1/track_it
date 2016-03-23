@@ -1,8 +1,20 @@
 <div class="track-card-container">
   <div class="track-card">
     <div class="track-card-main">
+      <div class="player-track-main">
+      <script src='//w.soundcloud.com/player/api.js'></script>
+        <div class="player">
+         <span class='info'></span>
+         <div class="waveform"></div>
+         <div class="position"></div>
+        </div>
+          <iframe class="sc-widget" src="//w.soundcloud.com/player/?url=//soundcloud.com/wata-104408421/sledge-2">
+          </iframe>
+       </iframe>
+      </div>
       <div class='track-card-title'>
         <%= @track.name %>
+        <p style="font-size:20px"><%= @track.user.username %></p>
       </div>
     </div>
     <div class="track-card-sidebar">
@@ -23,6 +35,7 @@
       <div class='track-card-sidebar-footer'>
         <%= render 'comments/form', track: @track, comment: @comment %>
       </div>
+
     </div>
   </div>
 </div>

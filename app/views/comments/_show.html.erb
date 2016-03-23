@@ -1,3 +1,9 @@
-<p><%= link_to comment.user.username, tracker_path(comment.user) %> :
-<%= comment.content %></p>
+<div class="trackers-name">
+  <p>
+    <%= link_to comment.user.username, tracker_path(comment.user) %>
+  </p>
+</div>
+<div class="trackers-comment">
+  <p><%= comment.content %></p>
+</div>
 

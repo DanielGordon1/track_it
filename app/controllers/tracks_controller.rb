@@ -64,14 +64,15 @@ class TracksController < ApplicationController
   end
 
   def upvote
-    if current_user.votes.where(user: current_user)
+    if  @track.votes.where(user: current_user).first_or_create
+     redirect_to root_path(anchor: "trending")
+
+   else
+     current_user.votes.where(user: current_user)
        @track.votes.where(user: current_user).first.destroy
-       redirect_to root_path(anchor: "hot-tracks")
-    else
-       @track.votes.where(user: current_user).first_or_create
-       redirect_to root_path(anchor: "hot-tracks")
-    end
-  end
+       redirect_to root_path(anchor: "trending")
+     end
+   end
 
 private
 

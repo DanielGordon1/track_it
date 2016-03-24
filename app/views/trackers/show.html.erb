@@ -8,13 +8,13 @@
       <h2></h2>
     </div>
     <div class="tabs">
-      <a class="tab active" data-target="#bio">
+      <a class="tab active" data-target="#votes">
         <h3>Upvotes</h3>
       </a>
-      <a class="tab" data-target="#projects">
+      <a class="tab" data-target="#comments">
         <h3>Comments</h3>
       </a>
-      <a class="tab" data-target="#contact">
+      <a class="tab" data-target="#tracks">
         <h3>Tracks</h3>
       </a>
     </div>
@@ -22,25 +22,29 @@
 </div>
 
 <div class="container text-center">
-  <div class="tab-content" id="bio">
+  <div class="tab-content" id="votes">
     <p>List of upvoted Tracks.</p>
   </div>
-  <div class="tab-content hidden" id="projects">
+
+
+  <div class="tab-content hidden" id="comments">
     <p>List of Comments on Tracks.</p>
 
 
+    <% tracks = [] %>
     <% counter = 0 %>
     <% @tracker.comments.each do |comment| %>
-      <% counter += 1 %>
-      <li>
-        <%= "#{counter}" + "#{comment.content}" %>
-      </li>
-    <% end %>
 
+      <% tracks << Track.find_by_id(comment.track_id) %>
+      <li>
+        <h5><%= " #{comment.content} on " %> <%= link_to tracks[counter].name.upcase, track_path(tracks[counter]) %></h5>
+      </li>
+      <% counter += 1 %>
+    <% end %>
   </div>
 
 
-  <div class="tab-content hidden" id="contact">
+  <div class="tab-content hidden" id="tracks">
     <p>Public page with tracks uploaded by this person.</p>
 
     <% @tracker.tracks.each do |track| %>

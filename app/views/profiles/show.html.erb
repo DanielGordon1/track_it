@@ -25,8 +25,8 @@
 </div>
 
 
-<div class="container text-center">
-  <div class="tab-content" id="votes">
+<div class="tab-content" id="votes">
+  <div class= "container product-container">
     <h4> Upvotes </h4>
     <!-- TODO : Link to profile page of the track 
   -->
@@ -40,25 +40,30 @@
   <div class="product">
     <div class='product-upvote'>
       <div class="product-arrow"></div>
+
         <%= button_to '+1', upvote_track_path(track), method: :patch, class: "product-arrow" %>
         <%= (track.votes.count) %>
     </div>
+    <%= image_path '' , class: "product-image hidden-xs"%>
     <div class='product-body'>
      <h5><%= link_to track.name, track_path(track) %></h5>
       <p><%= track.genre %></p>
       <small><%= track.version %></small>
+      <p class="track-comment-size"><%= pluralize track.comments.size, "comment" %></p>
     </div>
     <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-      <script src="<%= track.soundcloud_permalink_url %>"></script>
-      <div class="player">
-        <span class='info'></span>
-        <div class="waveform"></div>
-        <div class="position"></div>
-      </div>
-      <iframe class="sc-widget" src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}" %>></iframe>
+         <iframe id="soundcloud_player"src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}&show_artwork=true&liking=false&sharing=false&auto_play=false"%> 
+           style= 
+           width="400"
+           height="100"
+           frameborder="no"
+           padding="0px"
+           ></iframe>
+           </ul>
+           </div>
       <% end %>
       <% end %>
-    </ul>
+
   </div>
 </div>
 

@@ -26,6 +26,8 @@
   <div class= "container product-container">
     <% @tracks.each do |track| %>
     <% if track.soundcloud_permalink_url != nil %>
+    <!--  modal -->
+      <%#= link_to('Track', "#", "data-toggle" => "modal", "data-target" => "#show")  %> 
 
     <div class="product">
       <div class='product-upvote'>
@@ -50,7 +52,7 @@
       <% end %>
     </div>
   </div>
-  <%#= link_to('Track', "#", "data-toggle" => "modal", "data-target" => "#show")  %> 
+
 
 
 

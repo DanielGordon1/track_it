@@ -1,0 +1,47 @@
+<div class="track-card-container">
+  <div class="track-card">
+    <div class="track-card-main">
+      <div class="player-track-main">
+      <script src='//w.soundcloud.com/player/api.js'></script>
+        <div class="player">
+         <span class='info'></span>
+         <div class="waveform"></div>
+         <div class="position"></div>
+        </div>
+         <iframe id="soundcloud_player"src=<%= "//w.soundcloud.com/player/?url=#{@track.soundcloud_permalink_url}&show_artwork=true&liking=false&sharing=false&auto_play=false"%> 
+           style= 
+           width="400"
+           height="100"
+           frameborder="no"
+           padding="0px"
+           ></iframe>
+       </iframe>
+      </div>
+      <div class='track-card-title'>
+        <%= @track.name %>
+        <p style="font-size:20px"><%= @track.user.username %></p>
+      </div>
+    </div>
+    <div class="track-card-sidebar">
+      <span class="track-comment-size"><%= pluralize @track.comments.size, "comment" %></span>
+      <div class='track-card-comments dont-break-out'>
+        <div id="comments">
+          <% if @track.comments.blank? %>
+            <p class="no-comments">
+              Be the first to leave a comment for <%= @track.name %> by <%= @track.user.username %>
+            </p>
+          <% else %>
+            <% @track.comments.each do |comment| %>
+              <%= render 'comments/show', comment: comment %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class='track-card-sidebar-footer'>
+        <%= render 'comments/form', track: @track, comment: @comment %>
+      </div>
+    </div>
+    <%= link_to "/" do %><i class="fa fa-times"></i><% end %>
+  </div>
+</div>
+

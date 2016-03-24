@@ -1,0 +1,21 @@
+<div class="product" data-track-id="<%= track.id %>">
+  <div class='product-upvote'>
+    <div class="product-arrow"></div>
+
+    <%= button_to '+1', upvote_track_path(track), method: :patch, remote: true, class: "product-arrow" %>
+    <%= (track.votes.count) %>
+
+  </div>
+  <!-- TODO: Add photo off track -->
+  <%= image_path '' , class: "product-image hidden-xs"%>
+  <div class='product-body'>
+   <h5><%= link_to track.name, track_path(track) %></h5>
+     <p><%= track.genre %></p>
+     <small><%= track.version %></small>
+      <p class="track-comment-size"><%= pluralize track.comments.size, "comment" %></p>
+  </div>
+  <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
+  <%=link_to track.user.username, profile_path %></ul>
+</div>
+
+<%#= link_to('Track', "#", "data-toggle" => "modal", "data-target" => "#show")  %>

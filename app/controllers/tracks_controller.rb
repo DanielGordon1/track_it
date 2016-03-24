@@ -2,10 +2,6 @@ class TracksController < ApplicationController
 
   before_action :find_track, only: [:show, :upvote, :downvote, :destroy]
 
-  def index
-    @tracks = Track.all
-  end
-
   def show
     @comment = Comment.new
   end
@@ -66,13 +62,19 @@ class TracksController < ApplicationController
   def upvote
     if !@track.votes.where(user: current_user).exists?
       @track.votes.where(user: current_user).first_or_create
-      redirect_to root_path(anchor: "trending")
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js  # <-- will render `app/views/tracks/vote.js.erb`
+      end
     else
       current_user.votes.where(user: current_user)
       @track.votes.where(user: current_user).first.destroy
-      redirect_to root_path(anchor: "trending")
+      respond_to do |format|
+        format.html { redirect_to root_path}
+        format.js
     end
   end
+end
 
 private
 

@@ -4,4 +4,5 @@
 //= require comments
 //= require sidebar
 //= require tabs
-
+//= require modal_show
+//= require track_item

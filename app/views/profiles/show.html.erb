@@ -28,8 +28,7 @@
 <div class="tab-content" id="votes">
   <div class= "container product-container">
     <h4> Upvotes </h4>
-    <!-- TODO : Link to profile page of the track 
-  -->
+    <!-- TODO : Link to profile page of the track -->
   <% trackz = [] %>
   <% current_user.votes.each do |vote| %>
   <% trackz << Track.find_by_id(vote.track_id) %>

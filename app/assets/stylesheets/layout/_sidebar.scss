@@ -43,13 +43,16 @@ a:hover, a:focus {
     right: 25px;
     cursor: pointer;
     transition: left 500ms $easing;
+    outline-color: white;
+
     div {
         width: 35px;
         height: 2px;
         margin-bottom: 8px;
-        background-color: black;
+        background-color: grey;
         transition: transform 500ms $easing, opacity 500ms, background-color 250ms;
     }
+
 }
 
 #btn.active {
@@ -95,7 +98,7 @@ a:hover, a:focus {
             .item {
                 position: relative;
                 cursor: pointer;
-                font-size: 2em;
+                font-size: 1em;
                 padding: 15px 35px;
                 transition: all 250ms;
                 &:hover {
@@ -106,6 +109,4 @@ a:hover, a:focus {
                 }
             }
         }
-#btn.hover {
-    outline-color: white;
-}
+

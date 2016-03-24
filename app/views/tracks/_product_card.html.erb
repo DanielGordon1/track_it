@@ -1,9 +1,13 @@
+<% user = User.find_by_id(track.user_id) %>
+<% photo = user.photo_url %>
+
+
 <div class="product" data-track-id="<%= track.id %>">
   <div class='product-upvote'>
     <%= render 'tracks/track_upvote', track: track %>
   </div>
   <!-- TODO: Add photo off track -->
-  <%= image_path '' , class: "product-image hidden-xs"%>
+
   <div class='product-body'>
    <h5><%= link_to track.name, detail_track_path(track), remote: true %></h5>
      <p><%= track.genre %></p>
@@ -12,4 +16,8 @@
   </div>
   <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
   <%=link_to track.user.username, profile_path %></ul>
+
+  <div>
+    <%= image_tag photo, class: "avatar-large" %>
+  </div>
 </div>

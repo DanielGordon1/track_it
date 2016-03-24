@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :tracks, only: [:show, :new, :create, :destroy] do
     member do
       patch :upvote
-  
+      get   :detail
     end
 
     resources :comments, only: [:create, :destroy]

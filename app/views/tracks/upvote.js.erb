@@ -2,4 +2,4 @@
 //  //$('#upvote').append(new_upvote);
 //  //
 // });
-$('.product[data-track-id="<%= @track.id %>"]').replaceWith("<%= j render 'tracks/product_card', track: @track %>");
+$(".track-upvote-<%= j @track.id.to_s %>").replaceWith("<%= j render 'tracks/track_upvote', track: @track %>");

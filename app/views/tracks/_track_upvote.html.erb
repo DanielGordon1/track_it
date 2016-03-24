@@ -1,0 +1,4 @@
+<%= link_to upvote_track_path(track), remote: true, method: :patch, class: "track-upvote track-upvote-#{track.id}" do %>
+  <div class="product-arrow"></div>
+  <%= (track.votes.count)%>
+<% end %>

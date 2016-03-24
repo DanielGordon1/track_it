@@ -9,6 +9,9 @@
   $('#comments').append(new_comment);
   $(".no-comments").html("");
 
+  // Remove any error message
+  $("#new_comment .help-block").remove();
+
   // update the comments count
   $('.track-comment-size').html("<%= j pluralize @track.comments.size, 'comment' %>")
   // Show the new review with an animation!

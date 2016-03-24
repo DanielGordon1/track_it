@@ -1,14 +1,12 @@
 
 <div class="profile-header-wrapper">
-
   <div class="container profile-header-container text-center">
     <div class="profile-header-infos">
-
       <div class ="profile.avatar">
-        <%= cl_image_tag "trump_d2iwhc.jpg", class:"avatar-bordered" %>
+        <%= image_tag current_user.photo_url, class: "avatar-bordered" %>
         <h1><%= current_user.username.capitalize %></h1>
-      </div>
       <h2></h2>
+      </div>
     </div>
     <div class="tabs">
       <a class="tab active" data-target="#votes">
@@ -29,85 +27,83 @@
     <div class= "container product-container">
       <h4> Upvotes </h4>
       <!-- TODO : Link to profile page of the track -->
-    <% trackz = [] %>
-    <% current_user.votes.each do |vote| %>
-    <% trackz << Track.find_by_id(vote.track_id) %>
-    <% end %>
+      <% trackz = [] %>
+      <% current_user.votes.each do |vote| %>
+      <% trackz << Track.find_by_id(vote.track_id) %>
+      <% end %>
 
-    <% trackz.each do |track| %>
-    <% if track.soundcloud_permalink_url != nil %>
-    <div class="product">
-      <div class='product-upvote'>
-        <div class="product-arrow"></div>
+      <% trackz.each do |track| %>
+      <% if track.soundcloud_permalink_url != nil %>
+      <div class="product">
+        <div class='product-upvote'>
+          <div class="product-arrow"></div>
           <%= button_to '+1', upvote_track_path(track), method: :patch, class: "product-arrow" %>
           <%= (track.votes.count) %>
-      </div>
-      <%= image_path '' , class: "product-image hidden-xs"%>
-      <div class='product-body'>
-       <h5><%= link_to track.name, track_path(track) %></h5>
-        <p><%= track.genre %></p>
-        <small><%= track.version %></small>
-        <p class="track-comment-size"><%= pluralize track.comments.size, "comment" %></p>
-      </div>
-      <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-           <iframe id="soundcloud_player"src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}&show_artwork=true&liking=false&sharing=false&auto_play=false"%> 
-             style= 
-             width="400"
-             height="100"
-             frameborder="no"
-             padding="0px"
-             ></iframe>
-             </ul>
-      </div>
-      <% end %>
-      <% end %>
-    </div>
-  </div>
+        </div>
+        <%= image_path '' , class: "product-image hidden-xs"%>
+        <div class='product-body'>
+         <h5><%= link_to track.name, track_path(track) %></h5>
+         <p><%= track.genre %></p>
+         <small><%= track.version %></small>
+         <p class="track-comment-size"><%= pluralize track.comments.size, "comment" %></p>
+       </div>
+       <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
+         <iframe id="soundcloud_player"src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}&show_artwork=true&liking=false&sharing=false&auto_play=false"%> 
+           style= 
+           width="400"
+           height="100"
+           frameborder="no"
+           padding="0px"
+           ></iframe>
+         </ul>
+       </div>
+       <% end %>
+       <% end %>
+     </div>
+   </div>
 
-  <div class="tab-content hidden" id="comments">
-  <h4>Comments</h4>
+   <div class="tab-content hidden" id="comments">
+    <h4>Comments</h4>
     <% @current_user.comments.each do |comment| %>
-      <li>
-        <%= "On " + "#{comment.track.name}" + " you commented: " + "#{comment.content}" %>
-      </li>
+    <li>
+      <%= "On " + "#{comment.track.name}" + " you commented: " + "#{comment.content}" %>
+    </li>
     <% end %>
   </div>
 
 
   <div class="tab-content hidden" id="tracks">
-  <div class= "container product-container">
-   <h4>Tracks uploaded by you.</h4>
-   <button type="button" class="btn btn-secondary"><%= link_to 'Add a new track', new_track_path%></button>
-   <br>
-   <br>
-   <% current_user.tracks.each do |track| %>
-    <% if track.soundcloud_permalink_url != nil %>
-      <div class="product">
+    <div class= "container product-container">
+     <h4>Tracks uploaded by you.</h4>
+     <button type="button" class="btn btn-secondary"><%= link_to 'Add a new track', new_track_path%></button>
+     <br>
+     <br>
+     <% current_user.tracks.each do |track| %>
+     <% if track.soundcloud_permalink_url != nil %>
+     <div class="product">
       <div class='product-upvote'>
         <div class="product-arrow"></div>
-          <%= button_to '+1', upvote_track_path(track), method: :patch, class: "product-arrow" %>
-          <%= (track.votes.count) %>
+        <%= button_to '+1', upvote_track_path(track), method: :patch, class: "product-arrow" %>
+        <%= (track.votes.count) %>
       </div>
       <%= image_path '' , class: "product-image hidden-xs"%>
       <div class='product-body'>
        <h5><%= link_to track.name, track_path(track) %></h5>
-        <p><%= track.genre %></p>
-        <small><%= track.version %></small>
-        <p class="track-comment-size"><%= pluralize track.comments.size, "comment" %></p>
-      </div>
-      <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-           <iframe id="soundcloud_player"src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}&show_artwork=true&liking=false&sharing=false&auto_play=false"%> 
-             style= 
-             width="400"
-             height="100"
-             frameborder="no"
-             padding="0px"
-             ></iframe>
-             </ul>
-      </div>
-  <% end %>
-  <% end %>
-  </div>
-</div>
-
-
+       <p><%= track.genre %></p>
+       <small><%= track.version %></small>
+       <p class="track-comment-size"><%= pluralize track.comments.size, "comment" %></p>
+     </div>
+     <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
+       <iframe id="soundcloud_player"src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}&show_artwork=true&liking=false&sharing=false&auto_play=false"%> 
+         style= 
+         width="400"
+         height="100"
+         frameborder="no"
+         padding="0px"
+         ></iframe>
+       </ul>
+     </div>
+     <% end %>
+     <% end %>
+   </div>
+ </div>

@@ -1,0 +1,5 @@
+// $(function() {
+//  //$('#upvote').append(new_upvote);
+//  //
+// });
+$('.product[data-track-id="<%= @track.id %>"]').replaceWith("<%= j render 'tracks/track_card', track: @track %>");

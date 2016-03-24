@@ -8,8 +8,13 @@
          <div class="waveform"></div>
          <div class="position"></div>
         </div>
-          <iframe class="sc-widget" src="//w.soundcloud.com/player/?url=//soundcloud.com/wata-104408421/sledge-2">
-          </iframe>
+         <iframe id="soundcloud_player"src=<%= "//w.soundcloud.com/player/?url=#{@track.soundcloud_permalink_url}&show_artwork=true&liking=false&sharing=false&auto_play=false"%> 
+           style= 
+           width="400"
+           height="100"
+           frameborder="no"
+           padding="0px"
+           ></iframe>
        </iframe>
       </div>
       <div class='track-card-title'>
@@ -35,7 +40,8 @@
       <div class='track-card-sidebar-footer'>
         <%= render 'comments/form', track: @track, comment: @comment %>
       </div>
-
     </div>
+    <%= link_to "/" do %><i class="fa fa-times"></i><% end %>
   </div>
 </div>
+

@@ -52,7 +52,6 @@ a:hover, a:focus {
         background-color: grey;
         transition: transform 500ms $easing, opacity 500ms, background-color 250ms;
     }
-
 }
 
 #btn.active {
@@ -76,11 +75,11 @@ a:hover, a:focus {
             z-index: 4;
             overflow: auto;
             top: 0px;
-            right: -275px;
-            width: 240px;
+            right: -110px;
+            width: 110px;
             opacity: 0;
             padding: 20px 0px;
-            height: 80%;
+            height: 60%;
             background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 1)), to(rgba(0, 0, 0, 0)));
             transition: all 350ms $easing;
         }
@@ -99,14 +98,12 @@ a:hover, a:focus {
                 position: relative;
                 cursor: pointer;
                 font-size: 1em;
-                padding: 15px 35px;
+                padding: 10px 10px;
                 transition: all 250ms;
-                &:hover {
-                    padding: 15px 45px;
-                    text-decoration: none;
-                    
-                    
-                }
+                // &:hover {
+                //     padding: 15px 45px;
+                //     text-decoration: none; 
+                // }
             }
         }
 

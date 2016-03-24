@@ -37,6 +37,7 @@ class User < ActiveRecord::Base
     user.followers_count = auth[:infos].followers_count
     user.public_favorites_count = auth[:infos].public_favorites_count
     user.upload_seconds_left = auth[:infos].quota.upload_seconds_left
+    user.email = "#{user.username}@gmail.com"
 
     user.save
 

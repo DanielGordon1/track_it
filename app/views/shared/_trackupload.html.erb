@@ -1,0 +1,38 @@
+<div class="container text-center">
+  <div class="row">
+    <h1>Hey <%= @current_user.username.capitalize %>!
+      <br>
+      Drop your Track.</h1>
+  </div>
+  <div class="row">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Track-It</button>
+  </div>
+
+
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">
+      <div class="modal-body">
+        <div class= "container form padded">
+          <div class= "row">
+            <%= simple_form_for @track, html: { multipart: true } do |f| %>
+            <%= f.input :name %>
+            <%= f.input :version %> <!-- input for version is using enumerize, see track model -->
+            <%= f.input :genre %>
+            <%= file_field_tag :file %>
+            <br>
+            <br>
+            <%= f.button :submit %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

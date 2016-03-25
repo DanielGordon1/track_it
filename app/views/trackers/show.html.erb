@@ -2,7 +2,6 @@
 <div class="profile-header-wrapper">
   <div class="container profile-header-container text-center">
     <div class="profile-header-infos">
-      <!-- <img src="trump.jpeg" alt=""> -->
       <%= image_tag @tracker.photo_url, class: "avatar-bordered" %>
       <h1><%= @tracker.username.capitalize %></h1>
       <h2></h2>
@@ -37,6 +36,7 @@
       <% if track.soundcloud_permalink_url != nil %>
       <div class="product">
         <div class='product-upvote'>
+        <!-- the upvote arrow and count -->
           <%= render 'tracks/track_upvote', track: track %>
         </div>
         <%= image_path '' , class: "product-image hidden-xs"%>
@@ -66,8 +66,8 @@
   <div class="tab-content hidden" id="comments">
     <p>Tracks you have commented</p>
     <% tracks = [] %>
-    <%# counter = 0 %>
     <% @tracker.tracks.each do |track| %>
+    <!-- displays the soundcloud player -->
       <% if track.soundcloud_permalink_url != nil %>
         <script src="<%= track.soundcloud_permalink_url %>"></script>
         <div class="player">
@@ -83,17 +83,16 @@
           padding="0px"
         >
         </iframe>
+        <!-- displays all the comment the trackers has made on one tracks -->
           <% @tracker.comments.each do |comment| %>
           <% tracks << Track.find_by_id(comment.track_id) %>
           <p><%= comment.content %></p>
           <% end %>
-        <%# counter += 1 %>
       <% end %>
     <% end %>
   </div>
 
 <!-- section tracks -->
-
   <div class="tab-content hidden" id="tracks">
     <div class= "container product-container">
     <h4>Tracks uploaded by <%= @tracker.username %></h4>
@@ -101,6 +100,7 @@
       <% if track.soundcloud_permalink_url != nil %>
         <div class="product">
           <div class='product-upvote'>
+            <!-- the upvote arrow and count -->
              <%= render 'tracks/track_upvote', track: track %>
           </div>
           <%= image_path '' , class: "product-image hidden-xs"%>

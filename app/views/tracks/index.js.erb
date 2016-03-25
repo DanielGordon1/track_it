@@ -1,0 +1,12 @@
+var maxPage = parseInt($('.pagination-helper').data('max-page'))
+var pageCount = parseInt($('.pagination-helper').data('page'))
+var nextPageCount = pageCount + 1;
+
+if(maxPage >= pageCount) {
+  $('.products').append("<%= j render 'tracks/tracks', tracks: @tracks %>")
+  $('.pagination-helper').data('page', nextPageCount)
+  window.i = true
+} else {
+  $('.pagination-helper').remove()
+}
+

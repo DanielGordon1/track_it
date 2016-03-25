@@ -81,6 +81,7 @@
      <% current_user.tracks.each do |track| %>
      <% if track.soundcloud_permalink_url != nil %>
      <div class="product">
+     <button type="button" class="btn btn-danger" style="margin-right: 25px"><%= link_to "X", track_path(track), method: :delete %></button>
       <div class='product-upvote'>
         <div class="product-arrow"></div>
         <%= button_to '+1', upvote_track_path(track), method: :patch, class: "product-arrow" %>
@@ -101,8 +102,7 @@
          frameborder="no"
          padding="0px"
          ></iframe>
-       </ul>
-     </div>
+       </ul>  
      <% end %>
      <% end %>
    </div>

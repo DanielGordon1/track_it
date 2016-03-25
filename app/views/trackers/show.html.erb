@@ -21,6 +21,8 @@
   </div>
 </div>
 
+
+<!-- Section Upvotes -->
 <div class="container text-center">
   <div class="tab-content" id="votes">
     <div class= "container product-container">
@@ -35,9 +37,7 @@
       <% if track.soundcloud_permalink_url != nil %>
       <div class="product">
         <div class='product-upvote'>
-          <div class="product-arrow"></div>
-          <%= button_to '+1', upvote_track_path(track), method: :patch, class: "product-arrow" %>
-          <%= (track.votes.count) %>
+          <%= render 'tracks/track_upvote', track: track %>
         </div>
         <%= image_path '' , class: "product-image hidden-xs"%>
         <div class='product-body'>
@@ -60,6 +60,8 @@
        <% end %>
     </div>
   </div>
+
+  <!-- section comments -->
 
   <div class="tab-content hidden" id="comments">
     <p>Tracks you have commented</p>
@@ -90,6 +92,8 @@
     <% end %>
   </div>
 
+<!-- section tracks -->
+
   <div class="tab-content hidden" id="tracks">
     <div class= "container product-container">
     <h4>Tracks uploaded by <%= @tracker.username %></h4>
@@ -97,9 +101,7 @@
       <% if track.soundcloud_permalink_url != nil %>
         <div class="product">
           <div class='product-upvote'>
-            <div class="product-arrow"></div>
-            <%= button_to '+1', upvote_track_path(track), method: :patch, class: "product-arrow" %>
-            <%= (track.votes.count) %>
+             <%= render 'tracks/track_upvote', track: track %>
           </div>
           <%= image_path '' , class: "product-image hidden-xs"%>
           <div class='product-body'>

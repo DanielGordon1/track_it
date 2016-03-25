@@ -6,18 +6,21 @@
   <div class='product-upvote'>
     <%= render 'tracks/track_upvote', track: track %>
   </div>
-  <!-- TODO: Add photo off track -->
+ 
 
   <div class='product-body'>
    <h5><%= link_to track.name, detail_track_path(track), remote: true %></h5>
      <p><%= track.genre %></p>
-     <small><%= track.version %></small>
-      <p class="track-comment-size"><%= pluralize track.comments.size, "comment" %></p>
   </div>
-  <ul class="list-inline product-controls product-controls-hidden hidden-sm hidden-xs">
-  <%=link_to track.user.username, tracker_path(track.user_id) %></ul>
-
-  <div>
-    <%= image_tag photo, class: "avatar-large" %>
+  <div class='product-version'>
+   <bold><%= track.version %></bold>
+  </div>
+  <div class='product-comment'>
+    <%= pluralize track.comments.size, "comment" %>
+  </div>
+  <div class='product-image'>
+    <%=link_to tracker_path(track.user_id) do %>
+      <%= image_tag photo, class: "avatar-large" %>
+    <% end %>
   </div>
 </div>

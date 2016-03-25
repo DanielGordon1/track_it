@@ -2,7 +2,6 @@
 <div class="profile-header-wrapper">
   <div class="container profile-header-container text-center">
     <div class="profile-header-infos">
-      <!-- <img src="trump.jpeg" alt=""> -->
       <%= image_tag @tracker.photo_url, class: "avatar-bordered" %>
       <h1><%= @tracker.username.capitalize %></h1>
       <h2></h2>
@@ -21,6 +20,8 @@
   </div>
 </div>
 
+
+<!-- Section Upvotes -->
 <div class="container text-center">
   <div class="tab-content" id="votes">
     <div class= "container track-item-container">
@@ -33,11 +34,15 @@
 
       <% trackz.each do |track| %>
       <% if track.soundcloud_permalink_url != nil %>
+
       <div class="track-item">
         <div class='track-item-upvote'>
           <div class="track-item-arrow"></div>
           <%= button_to '+1', upvote_track_path(track), method: :patch, class: "track-item-arrow" %>
           <%= (track.votes.count) %>
+
+          <%= render 'tracks/track_upvote', track: track %>
+
         </div>
         <%= image_path '' , class: "track-item-image hidden-xs"%>
         <div class='track-item-body'>
@@ -64,11 +69,12 @@
   </div>
 
 
+
   <div class="tab-content hidden" id="comments">
     <p>Tracks you have commented</p>
     <% tracks = [] %>
-    <%# counter = 0 %>
     <% @tracker.tracks.each do |track| %>
+    <!-- displays the soundcloud player -->
       <% if track.soundcloud_permalink_url != nil %>
         <script src="<%= track.soundcloud_permalink_url %>"></script>
         <div class="player">
@@ -84,25 +90,33 @@
           padding="0px"
         >
         </iframe>
+        <!-- displays all the comment the trackers has made on one tracks -->
           <% @tracker.comments.each do |comment| %>
           <% tracks << Track.find_by_id(comment.track_id) %>
           <p><%= comment.content %></p>
           <% end %>
-        <%# counter += 1 %>
       <% end %>
     <% end %>
   </div>
 
+<!-- section tracks -->
   <div class="tab-content hidden" id="tracks">
     <div class= "container track-item-container">
     <h4>Tracks uploaded by <%= @tracker.username %></h4>
     <% @tracker.tracks.each do |track| %>
       <% if track.soundcloud_permalink_url != nil %>
+
         <div class="track-item">
           <div class='track-item-upvote'>
             <div class="track-item-arrow"></div>
             <%= button_to '+1', upvote_track_path(track), method: :patch, class: "track-item-arrow" %>
             <%= (track.votes.count) %>
+
+        <div class="product">
+          <div class='product-upvote'>
+            <!-- the upvote arrow and count -->
+             <%= render 'tracks/track_upvote', track: track %>
+
           </div>
           <%= image_path '' , class: "track-item-image hidden-xs"%>
           <div class='track-item-body'>
@@ -111,7 +125,8 @@
             <small><%= track.version %></small>
             <p class="track-comment-size"><%= pluralize track.comments.size, "comment" %></p>
           </div>
-          <ul class="list-inline track-item-controls track-item-controls-hidden hidden-sm hidden-xs">
+
+           <div class="track-item-player" style='    margin-left: 30px;'>
             <iframe id="soundcloud_player"src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}&show_artwork=true&liking=false&sharing=false&auto_play=false"%>
              style=
              width="400"
@@ -120,7 +135,7 @@
              padding="0px"
              >
             </iframe>
-          </ul>
+          </div>
         </div>
       <% end %>
     <% end %>

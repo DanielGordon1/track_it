@@ -1,7 +1,8 @@
 class Track < ActiveRecord::Base
   extend Enumerize
 
-  enumerize :version, in: [:sketch, :rough, :finale]
+  enumerize :version, in: [:Sketch, :Rough, :Final]
+  enumerize :genre, in: [:Ambient, :Classical, :Dancehall, :DeepHouse, :Disco, :DrumnBass, :Electronic, :HipHop, :House, :Jazz, :Metal, :Pop, :Rap, :RnB, :Rock, :Soul, :Techno, :Trance, :TripHop]
 
   belongs_to :user
 

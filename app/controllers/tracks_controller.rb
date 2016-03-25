@@ -1,12 +1,19 @@
 class TracksController < ApplicationController
   before_action :find_track, only: [:show, :upvote, :downvote, :destroy, :detail]
-  respond_to :js, only: [:detail, :upvote]
+  respond_to :js, only: [:detail, :upvote, :index]
+  skip_before_action :authenticate_user!, only: [:index, :show, :detail]
+
   def show
     @comment = Comment.new
   end
 
   def new
     @track = current_user.tracks.new
+  end
+
+  def index
+    tracks = Track.where.not(soundcloud_permalink_url: nil)
+    @tracks = Kaminari.paginate_array(tracks).page(params[:page]).per(3)
   end
 
   def detail

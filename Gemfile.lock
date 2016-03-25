@@ -305,6 +305,7 @@ DEPENDENCIES
   font-awesome-sass
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   pg
   pry-byebug
   pry-rails

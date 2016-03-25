@@ -1,0 +1,28 @@
+<% user = User.find_by_id(track.user_id) %>
+<% photo = user.photo_url %>
+
+<div class="track-item-container">
+  <div class="track-item" data-track-id="<%= track.id %>">
+    <div class='track-item-upvote'>
+      <%= render 'tracks/track_upvote', track: track %>
+    </div>
+    <div class='track-item-name'>
+     <h3><%= link_to track.name, detail_track_path(track), remote: true %></h3>
+     <div class='track-item-genre'>
+      <p><%= track.genre %></p>
+    </div>
+  </div>
+  <div class='track-item-version'>
+   <bold><%= track.version %></bold>
+ </div>
+ <div class='track-item-comment'>
+  <%= pluralize track.comments.size, "comment" %>
+</div>
+<div class='track-item-image'>
+  <%=link_to tracker_path(track.user_id) do %>
+  <%= image_tag photo, class: "avatar-large" %>
+  <% end %>
+</div>
+</div>
+</div>
+

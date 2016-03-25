@@ -23,12 +23,16 @@
 
 
 <div class="tab-content" id="trending">
-  <div class= "container well track-item-container">
-    <% @tracks.each do |track| %>
-      <%= render "tracks/track_item", track: track %>
-    <% end %>
+  <div class= "container product-container">
+    <div class='products'>
+      <%= render 'tracks/tracks', tracks: @tracks %>
+    </div>
+    <div class='pagination-helper' data-page='2' data-max-page=<%= @tracks.num_pages %>>
+      Loading more stuff
+    </div>
   </div>
 </div>
+
 
 
 

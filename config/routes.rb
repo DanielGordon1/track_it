@@ -9,10 +9,10 @@ Rails.application.routes.draw do
 
   get '/soundcloud/auth', to: 'soundcloud#auth'
   get '/soundcloud/callback', to: 'soundcloud#callback'
-  
+
   resources :trackers, only: [:show]
 
-  resources :tracks, only: [:show, :new, :create, :destroy] do
+  resources :tracks, only: [:show, :new, :create, :destroy, :index] do
     member do
       patch :upvote
       get   :detail

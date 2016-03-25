@@ -6,3 +6,5 @@
 //= require tabs
 //= require modal_show
 //= require track_item
+//= require pagination
+//= require visibility.min.js

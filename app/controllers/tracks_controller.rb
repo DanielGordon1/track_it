@@ -58,7 +58,7 @@ class TracksController < ApplicationController
 
   def destroy
     @track.destroy
-    redirect_to current_user
+    redirect_to profile_path
   end
 
   def upvote

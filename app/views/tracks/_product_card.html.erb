@@ -8,9 +8,11 @@
   </div>
  
 
-  <div class='product-body'>
-   <h5><%= link_to track.name, detail_track_path(track), remote: true %></h5>
-     <p><%= track.genre %></p>
+  <div class='product-name'>
+   <h3><%= link_to track.name, detail_track_path(track), remote: true %></h3>
+  <div class='product-genre'>
+    <p><%= track.genre %></p>
+  </div>
   </div>
   <div class='product-version'>
    <bold><%= track.version %></bold>

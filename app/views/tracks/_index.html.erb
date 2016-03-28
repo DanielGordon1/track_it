@@ -1,7 +1,8 @@
+<%= render 'shared/collapse' %>
 <header id="top" class="header">
   <div class="header-content text-center">
-  <div class="padded"></div>
-   <div class="test">
+    <div class="padded"></div>
+    <div class="test">
      <a href="#music-tabs" class="fa fa-play fa-4x"></a>
      <a href="#Bar" class="fa fa-pause fa-4x" data-toggle="collapse"></a>
      <!-- <h2>Track it </h2> -->
@@ -9,24 +10,30 @@
  </div>
 </header>
 
-<div class="tabs" id="music-tabs">
-<!-- organizes the tabs-->
-  <%= link_to root_path, class: (tab == "hot" ? 'active' : '') do %>
+<div class="tabs-home" id="music-tabs">
+  <!-- organizes the tabs-->
+  <div class="tab-home">
+    <%= link_to root_path, class: (tab == "hot" ? 'active' : '') do %>
     <h3>Hot</h3>
-  <% end %>
+    <% end %>
+  </div>
   <!-- calls the trending view page -->
-  <%= link_to trending_tracks_path, class: (tab == "trending" ? 'active' : '') do %>
+  <div class="tab-home">
+    <%= link_to trending_tracks_path, class: (tab == "trending" ? 'active' : '') do %>
     <h3>Trending</h3>
-  <% end %>
-<!-- calls the fresh view page -->
-  <%= link_to fresh_tracks_path, class: (tab == "fresh" ? 'active' : '') do %>
+    <% end %>
+  </div>
+  <!-- calls the fresh view page -->
+  <div class="tab-home">
+    <%= link_to fresh_tracks_path, class: (tab == "fresh" ? 'active' : '') do %>
     <h3>Fresh</h3>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 <div class="container text-center">
-<!-- displays hot tracks per default -->
-<!-- trending and fresh tracks are 2 others routes, they have their own view -->
+  <!-- displays hot tracks per default -->
+  <!-- trending and fresh tracks are 2 other routes, they have their own view -->
   <div class="tab-content" id="hot">
     <div class= "container track-item-container">
       <div class= "container product-container">
@@ -34,7 +41,7 @@
           <%= render 'tracks/tracks', tracks: @tracks %>
         </div>
         <div class='pagination-helper' data-page='2' data-max-page=<%= @tracks.num_pages %>
-        >
+          >
           Loading more stuff
         </div>
       </div>

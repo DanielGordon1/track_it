@@ -1,7 +1,23 @@
 class TracksController < ApplicationController
   before_action :find_track, only: [:show, :upvote, :downvote, :destroy, :detail]
   respond_to :js, only: [:detail, :upvote, :index]
-  skip_before_action :authenticate_user!, only: [:index, :show, :detail]
+  skip_before_action :authenticate_user!, only: [:index, :fresh, :trending, :show, :detail]
+
+  def fresh
+    @tracks = Track.where.not(soundcloud_permalink_url: nil).
+      order("created_at DESC").
+      page(params[:page]).per(3)
+  end
+
+  def trending
+    @tracks = Track.select("tracks.*, count(votes.id) as votes_count").
+      joins("LEFT OUTER JOIN votes ON votes.track_id = tracks.id").
+      where.not(soundcloud_permalink_url: nil).
+      where("DATE(votes.created_at) = :today", today: Date.today).
+      group("tracks.id").
+      order("votes_count DESC, tracks.created_at DESC").
+      page(params[:page]).per(3)
+  end
 
   def show
     @comment = Comment.new

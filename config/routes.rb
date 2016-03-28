@@ -13,6 +13,11 @@ Rails.application.routes.draw do
   resources :trackers, only: [:show]
 
   resources :tracks, only: [:show, :new, :create, :destroy, :index] do
+    collection do
+      get :fresh
+      get :trending
+    end
+
     member do
       patch :upvote
       get   :detail

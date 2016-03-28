@@ -2,11 +2,9 @@
 <div class="profile-header-wrapper">
   <div class="container profile-header-container text-center">
     <div class="profile-header-infos">
-      <div class ="profile.avatar">
         <%= image_tag current_user.photo_url, class: "avatar-bordered" %>
         <h1><%= current_user.username.capitalize %></h1>
         <h2></h2>
-      </div>
     </div>
     <div class="tabs">
       <a class="tab active" data-target="#votes">
@@ -23,8 +21,9 @@
 </div>
 
 <div class="container text-center">
+
   <div class="tab-content" id="votes">
-  <%= render "upvote_card" %>
+    <%= render "upvote_card" %>
   </div>
 
   <div class="tab-content hidden" id="comments">
@@ -36,9 +35,7 @@
     <% end %>
   </div>
 
-
-
-
   <div class="tab-content hidden" id="tracks">
     <%= render "own_tracks_card" %>
- </div>
+  </div>
+</div>

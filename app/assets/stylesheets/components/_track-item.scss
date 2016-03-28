@@ -1,8 +1,8 @@
 body {
   background-color: lightgrey;
-      font-weight: lighter;
-    color: #999999;
-    margin-bottom: 0;
+  font-weight: lighter;
+  color: #999999;
+  margin-bottom: 0;
 }
 a:hover, a:focus {
     color: green;
@@ -27,6 +27,7 @@ a:hover, a:focus {
 }
 
 .track-item-comment {
+  margin-left: -20px;
   margin: 0 20px;
   opacity: .5;
   overflow:hidden;
@@ -40,7 +41,6 @@ a:hover, a:focus {
   transition: all 0.15s ease;
   padding-left: 10px;
   background-color: whitesmoke;
-  margin-top: 10px;
   box-shadow: 3px 3px 3px 3px #ccc;
 }
 

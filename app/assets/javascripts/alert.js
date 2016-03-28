@@ -1,3 +1,5 @@
-setTimeout(function() {
-    $('#alert').fadeOut('fast');
-}, 1000); // <-- time in milliseconds
+$(document).ready(function() {
+    setTimeout(function() {
+      $('#alert').fadeIn(200);
+    }, 30000); // milliseconds
+});

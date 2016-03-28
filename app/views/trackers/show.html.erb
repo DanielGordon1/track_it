@@ -37,12 +37,7 @@
 
       <div class="track-item">
         <div class='track-item-upvote'>
-          <div class="track-item-arrow"></div>
-          <%= button_to '+1', upvote_track_path(track), method: :patch, class: "track-item-arrow" %>
-          <%= (track.votes.count) %>
-
           <%= render 'tracks/track_upvote', track: track %>
-
         </div>
         <%= image_path '' , class: "track-item-image hidden-xs"%>
         <div class='track-item-body'>
@@ -108,12 +103,6 @@
 
         <div class="track-item">
           <div class='track-item-upvote'>
-            <div class="track-item-arrow"></div>
-            <%= button_to '+1', upvote_track_path(track), method: :patch, class: "track-item-arrow" %>
-            <%= (track.votes.count) %>
-
-        <div class="product">
-          <div class='product-upvote'>
             <!-- the upvote arrow and count -->
              <%= render 'tracks/track_upvote', track: track %>
 

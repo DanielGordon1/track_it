@@ -7,11 +7,12 @@
 }
 .tabs-home a {
   color: white;
+  opacity: 0.5;
 }
 .tabs-home :hover {
   cursor: pointer;
   text-decoration: none;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 .tabs-home h3 {
   font-size: 17px;
@@ -40,3 +41,5 @@
   color: black;
 }
 
+.tab-content{
+}

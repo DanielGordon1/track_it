@@ -8,30 +8,64 @@
  </div>
 </header>
 
-<div class="tabs-home" id="music-tabs">
-  <a class="tab-home" data-target="#hot">
-    <!-- <h3>Hot</h3> -->
-  </a>
-  <a class="tab-home active" data-target="#trending">
+<div class="tabs" id="music-tabs">
+  <%= link_to root_path, class: (tab == "hot" ? 'active' : '') do %>
+    <h3>Hot</h3>
+  <% end %>
+  <%= link_to trending_tracks_path, class: (tab == "trending" ? 'active' : '') do %>
     <h3>Trending</h3>
-  </a>
+  <% end %>
 
-  <a class="tab-home" data-target="#contact">
-    <!-- <h3>Fresh</h3> -->
-  </a>
+  <%= link_to fresh_tracks_path, class: (tab == "fresh" ? 'active' : '') do %>
+    <h3>Fresh</h3>
+  <% end %>
 </div>
 
-
-<div class="tab-content" id="trending">
-  <div class= "container product-container">
-    <div class='products'>
-      <%= render 'tracks/tracks', tracks: @tracks %>
-    </div>
-    <div class='pagination-helper' data-page='2' data-max-page=<%= @tracks.num_pages %>>
-      Loading more stuff
+<div class="container text-center">
+  <div class="tab-content" id="hot">
+    <div class= "container track-item-container">
+      <div class= "container product-container">
+        <div class='products'>
+          <%= render 'tracks/tracks', tracks: @tracks %>
+        </div>
+        <div class='pagination-helper' data-page='2' data-max-page=<%= @tracks.num_pages %>
+        >
+          Loading more stuff
+        </div>
+      </div>
     </div>
   </div>
+
+
+  <!-- <div class="tab-content hidden" id="trending">
+    <div class= "container track-item-container">
+      <div class= "container product-container">
+        <div class='products'>
+          <%#= render 'tracks/trending', tracks: @tracks %>
+        </div>
+        <div class='pagination-helper' data-page='2' data-max-page=<%= @tracks.num_pages %>
+        >
+          Loading more stuff
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+ <!--  <div class="tab-content hidden" id="fresh">
+    <div class= "container track-item-container">
+      <div class= "container product-container">
+        <div class='products'>
+          <%#= render 'tracks/fresh', tracks: @tracks %>
+        </div>
+        <div class='pagination-helper' data-page='2' data-max-page=<%= @tracks.num_pages %>>
+          Loading more stuff
+        </div>
+      </div>
+    </div>
+  </div> -->
 </div>
+
+
 
 
 

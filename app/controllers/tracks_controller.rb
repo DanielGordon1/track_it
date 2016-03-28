@@ -1,7 +1,32 @@
 class TracksController < ApplicationController
   before_action :find_track, only: [:show, :upvote, :downvote, :destroy, :detail]
   respond_to :js, only: [:detail, :upvote, :index]
-  skip_before_action :authenticate_user!, only: [:index, :show, :detail]
+  skip_before_action :authenticate_user!, only: [:index, :fresh, :trending, :show, :detail]
+
+  def fresh
+    # tracks need to have a permalink
+    @tracks = Track.where.not(soundcloud_permalink_url: nil).
+    # they're sorted by created_at
+      order("created_at DESC").
+    # pagination for scrolling
+      page(params[:page]).per(3)
+  end
+
+  def trending
+    # votes are not part of track schema so first we need to count the amount of votes for each tracks
+    @tracks = Track.select("tracks.*, count(votes.id) as votes_count").
+    # joins the amount of votes to each track (take in account when the track as 0 votes)
+      joins("LEFT OUTER JOIN votes ON votes.track_id = tracks.id").
+    # tracks need to have a permalink
+      where.not(soundcloud_permalink_url: nil).
+    # tracks selected where created today
+      where("DATE(votes.created_at) = :today", today: Date.today).
+      group("tracks.id").
+    # the tracks are order by votes, if same amount of votes, by date of creation
+      order("votes_count DESC, tracks.created_at DESC").
+    # pagination for the scrolling
+      page(params[:page]).per(3)
+  end
 
   def show
     @comment = Comment.new
@@ -69,9 +94,11 @@ class TracksController < ApplicationController
   end
 
   def upvote
+    # you can upvote only once
     if !@track.votes.where(user: current_user).exists?
       @track.votes.where(user: current_user).first_or_create
     else
+    # you can take your upvote back
       current_user.votes.where(user: current_user)
       @track.votes.where(user: current_user).first.destroy
     end

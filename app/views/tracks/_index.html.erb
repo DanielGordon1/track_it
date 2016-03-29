@@ -1,3 +1,4 @@
+
 <%= render 'shared/collapse' %>
 <header id="top" class="header">
   <div class="header-content text-center">
@@ -14,38 +15,36 @@
   <!-- organizes the tabs-->
   <div class="tab-home">
     <%= link_to root_path, class: (tab == "hot" ? 'active' : '') do %>
-    <h3>Hot</h3>
+      Hot
     <% end %>
   </div>
   <!-- calls the trending view page -->
   <div class="tab-home">
     <%= link_to trending_tracks_path, class: (tab == "trending" ? 'active' : '') do %>
-    <h3>Trending</h3>
+      Trending
     <% end %>
   </div>
   <!-- calls the fresh view page -->
   <div class="tab-home">
     <%= link_to fresh_tracks_path, class: (tab == "fresh" ? 'active' : '') do %>
-    <h3>Fresh</h3>
+      Fresh
     <% end %>
   </div>
 </div>
 
-<div class="container">
-  <!-- displays hot tracks per default -->
-  <!-- trending and fresh tracks are 2 other routes, they have their own view -->
-  <div class="tab-content" id="hot">
-    <div class= "container track-item-container">
-      <div class= "container product-container">
-          <%= render 'tracks/tracks', tracks: @tracks %>
-        </div>
-        <div class='pagination-helper' data-page='2' data-max-page=<%= @tracks.num_pages %>
-          >
-          Loading more stuff
-        </div>
-      </div>
-    </div>
+
+<!-- displays hot tracks per default -->
+<!-- trending and fresh tracks are 2 other routes, they have their own view -->
+<div class="tab-content" id="hot">
+  <div class= "container track-item-container">
+    <%= render 'tracks/tracks', tracks: @tracks %>
   </div>
+  <div class='pagination-helper' data-page='2' data-max-page=<%= @tracks.num_pages %>
+    >
+    Loading more stuff
+  </div>
+</div>
+</div>
 
 
 

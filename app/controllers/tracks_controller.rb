@@ -4,28 +4,11 @@ class TracksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :fresh, :trending, :show, :detail]
 
   def fresh
-    # tracks need to have a permalink
-    @tracks = Track.where.not(soundcloud_permalink_url: nil).
-    # they're sorted by created_at
-      order("created_at DESC").
-    # pagination for scrolling
-      page(params[:page]).per(3)
+    @tracks = Track.fresh.page(params[:page]).per(3)
   end
 
   def trending
-    # votes are not part of track schema so first we need to count the amount of votes for each tracks
-    @tracks = Track.select("tracks.*, count(votes.id) as votes_count").
-    # joins the amount of votes to each track (take in account when the track as 0 votes)
-      joins("LEFT OUTER JOIN votes ON votes.track_id = tracks.id").
-    # tracks need to have a permalink
-      where.not(soundcloud_permalink_url: nil).
-    # tracks selected where created today
-      where("DATE(votes.created_at) = :today", today: Date.today).
-      group("tracks.id").
-    # the tracks are order by votes, if same amount of votes, by date of creation
-      order("votes_count DESC, tracks.created_at DESC").
-    # pagination for the scrolling
-      page(params[:page]).per(3)
+    @tracks = Track.trending.page(params[:page]).per(3)
   end
 
   def show
@@ -37,8 +20,16 @@ class TracksController < ApplicationController
   end
 
   def index
-    tracks = Track.where.not(soundcloud_permalink_url: nil)
-    @tracks = Kaminari.paginate_array(tracks).page(params[:page]).per(3)
+    case params[:tab]
+    when "fresh"
+      @tracks = Track.fresh
+    when "trending"
+      @tracks = Track.trending
+    else # hot
+      @tracks = Track.hot
+    end
+
+    @tracks = @tracks.page(params[:page]).per(3)
   end
 
   def detail

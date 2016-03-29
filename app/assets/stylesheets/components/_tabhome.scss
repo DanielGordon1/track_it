@@ -3,21 +3,11 @@
   display: flex;
   padding: 0px 0px 0 0px !important;
   margin-top: -70px;
+  height: 70px;
+
   // position: absolute bottom center;
 }
-.tabs-home a {
-  color: white;
-  opacity: 0.5;
-}
-.tabs-home :hover {
-  cursor: pointer;
-  text-decoration: none;
-  opacity: 0.9;
-}
-.tabs-home h3 {
-  font-size: 17px;
-  font-weight: bold;
-}
+
 .tabs-home p {
   opacity: 0.5;
   margin-bottom: 0;
@@ -26,20 +16,59 @@
   background: rgba(102, 102, 102, 0.5);
   flex: 0 0 33.33%;
   text-align: center;
-  padding: 10px 0;
+  display: flex;
+
+  &:hover {
+    background: rgba(102, 102, 102, 0.7);
+  }
 }
 
-.tabhome:first-child {
-  border-radius: 0 0 0 0 !important;
-}
-.tabhome:last-child {
-  border-radius: 0 0 0 0 !important;
+.tab-home a {
+  color: white;
+
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
-.tab-home.active {
+.tab-home :active {
+  color: white;
+}
+
+.tab-home a :active{
+  color: white;
+}
+
+.active-tab {
   background: white;
-  color: black;
+
+  a {
+    color: black;
+  }
+
+  &:hover {
+    background: white;
+  }
+  
 }
 
-.tab-content{
+.pages-home {
+  .tab-home:nth-child(1) {
+    @extend .active-tab;
+  }
+}
+
+.tracks-trending {
+  .tab-home:nth-child(2) {
+    @extend .active-tab;
+  }
+}
+
+.tracks-fresh {
+  .tab-home:nth-child(3) {
+    @extend .active-tab;
+  }
 }

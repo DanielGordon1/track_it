@@ -1,5 +1,5 @@
 .profile-header-wrapper {
-  background-image: url('http://res.cloudinary.com/dgordon1/image/upload/c_scale,w_1600/v1458565220/studio_q3ph93.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/dgordon1/image/upload/c_scale,w_1600/v1458565220/studio_q3ph93.jpg');
   background-attachment: fixed;
   background-position: center;
 }
@@ -10,15 +10,15 @@
 
 .profile-header-container img {
   width: 80px;
-  border-radius: 10px;
-  float: left;
+  border-radius: 50px;
+  float: center;
 }
 .profile-header-container h1 {
   color: white;
   font-size: 28px;
   font-weight: bold;
   letter-spacing: -1px;
-  padding-top: 100px;
+  // padding-top: 100px;
 }
 .profile-header-container h2 {
   color: white;

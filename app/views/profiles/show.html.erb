@@ -1,4 +1,3 @@
-
 <div class="profile-header-wrapper">
   <div class="container profile-header-container text-center">
     <div class="profile-header-infos">
@@ -6,22 +5,22 @@
         <h1><%= current_user.username.capitalize %></h1>
         <h2></h2>
     </div>
-    <div class="tabs">
-      <a class="tab active" data-target="#votes">
-        <h3>Upvotes</h3>
-      </a>
-      <a class="tab" data-target="#comments">
-        <h3>Comments</h3>
-      </a>
-      <a class="tab" data-target="#tracks">
-        <h3>Tracks</h3>
-      </a>
-    </div>
   </div>
 </div>
 
-<div class="container text-center">
+<div class="tabs">
+  <a class="tab active" data-target="#votes">
+    <h3>Upvotes</h3>
+  </a>
+  <a class="tab" data-target="#comments">
+    <h3>Comments</h3>
+  </a>
+  <a class="tab" data-target="#tracks">
+    <h3>Tracks</h3>
+  </a>
+</div>
 
+<div class="container text-center">
   <div class="tab-content" id="votes">
     <%= render "upvote_method" %>
   </div>

@@ -23,6 +23,10 @@
   }
 }
 
+.player-track-main{
+  position: relative;
+}
+
 .track-card-main {
   flex:         1;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
@@ -31,24 +35,58 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+  position: relative;
+  overflow: hidden;
 
   .upvote{
   position: absolute;
-  bottom: 10px;
+  // bottom: 10px;
   }
 
-  .track-artwork{
-    width: 100%;
+  .track-card-artwork{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover !important;
+    right: 0;
+    z-index: 0;
+    transform: scale(1.2);
+    -webkit-filter: blur(15px);
   }
 
   .track-info{
-    background-color: white;
     position: absolute;
     left: 0px;
     font-size: 20px;
     bottom: 10px;
     display: flex;
     flex-flow: row;
+    padding: 15px;
+
+    .track-card-upvote{
+      display: block;
+      background: white;
+      padding: 4px 11px 4px;
+      margin-right: 20px;
+      border-radius: 3px;
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.41);
+    }
+
+    .track-basic{
+      display: flex;
+      flex-flow: column;
+      color: white;
+
+      .track-card-title{
+        font-size: 25px;
+      }
+
+      .track-card-artist{
+        font-size: 15px;
+        opacity: .5;
+      }
+    }
   }
 }
 
@@ -105,6 +143,7 @@
 
 .comment-user {
   padding-left: 10px
+
 }
 
 .track-card-comments {
@@ -117,7 +156,7 @@
 }
 
 .track-card-avatar{
-  width: 40px;
+  width: 30px;
   border-radius: 50%
 }
 
@@ -125,10 +164,13 @@
   #footer { display: none }
 }
 
-
+.trackers-name{
+  font-size: 14px;
+  padding-bottom: 7px;
+}
 
 .trackers-comment{
-  font-size: 14px;
+  font-size: 12px;
   padding-bottom: 10px;
   color: #A09C9C;
   line-height: 0;

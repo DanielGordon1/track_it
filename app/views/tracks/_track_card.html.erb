@@ -2,7 +2,8 @@
 
 <div class="track-card">
 
-  <div class="track-card-main">
+  <div class="track-card-main" style= "background: url ('<%= image_tag track.user.photo_url, class: "track-artwork"%>')>">
+    <%#= image_tag track.user.photo_url, class: "track-artwork"%>
     <div class="player-track-main">
     <script src='//w.soundcloud.com/player/api.js'></script>
       <div class="player">
@@ -11,8 +12,8 @@
        <div class="position"></div>
       </div>
        <div class="track-item-player" style='    margin-left: 30px;'>
-       <iframe id="soundcloud_player"src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}&show_artwork=true&liking=false&sharing=false&auto_play=false"%> 
-         style= 
+       <iframe id="soundcloud_player"src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}&show_artwork=true&liking=false&sharing=false&auto_play=false"%>
+         style=
          width="400"
          height="100"
          frameborder="no"
@@ -20,12 +21,17 @@
          ></iframe>
      </div>
     </div>
-      
-    <div class='track-card-title'>
-      <%= track.name %>
-      <p style="font-size:20px"><%= track.user.username %></p>
+
+
+    <div class="track-info">
+      <div class="track-item-upvote">
+          <%= render 'track_upvote', track: track %>
+      </div>
+      <div class='track-card-title'>
+          <%= track.name %><br>
+          <%= track.user.username %>
+      </div>
     </div>
-    <%= render 'track_upvote', track: track %>
   </div>
 
   <div class="track-card-sidebar">
@@ -48,4 +54,4 @@
     </div>
   </div>
 </div>
-<%= link_to "/" do %><i class="fa fa-magic fa-4x"></i><% end %>
+

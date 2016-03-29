@@ -14,18 +14,3 @@ $(function(){
   });
 });
 
-// $(function(){
-
-//   $(".tab-home").on("click", function(e){
-//     // Change active tab
-//     $(".tab-home").removeClass("active");
-//     $(this).addClass("active");
-
-//     // Hide all tab-content (use class="hidden")
-//     $(".tab-content").addClass("hidden");
-
-//     // Show target tab-content (use class="hidden")
-//      tabSelector = $(this).data("target");
-//     $(tabSelector).removeClass("hidden");
-//   });
-// });

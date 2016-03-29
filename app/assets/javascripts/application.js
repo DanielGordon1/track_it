@@ -8,3 +8,4 @@
 //= require track_item
 //= require pagination
 //= require visibility.min.js
+//= require alert

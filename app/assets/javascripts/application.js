@@ -9,3 +9,4 @@
 //= require pagination
 //= require visibility.min.js
 //= require alert
+//= require customplayer

@@ -11,8 +11,8 @@
        <div class="position"></div>
       </div>
        <div class="track-item-player" style='    margin-left: 30px;'>
-       <iframe id="soundcloud_player"src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}&show_artwork=true&liking=false&sharing=false&auto_play=false"%> 
-         style= 
+       <iframe id="soundcloud_player"src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}&show_artwork=true&liking=false&sharing=false&auto_play=false"%>
+         style=
          width="400"
          height="100"
          frameborder="no"
@@ -20,12 +20,15 @@
          ></iframe>
      </div>
     </div>
-      
-    <div class='track-card-title'>
-      <%= track.name %>
-      <p style="font-size:20px"><%= track.user.username %></p>
+
+
+   <div class="track-item-upvote upvote">
+        <%= render 'track_upvote', track: track %>
     </div>
-    <%= render 'track_upvote', track: track %>
+    <div class='track-card-title'>
+        <%= track.name %><br>
+        <%= track.user.username %>
+    </div>
   </div>
 
   <div class="track-card-sidebar">
@@ -48,4 +51,4 @@
     </div>
   </div>
 </div>
-<%= link_to "/" do %><i class="fa fa-magic fa-4x"></i><% end %>
+

@@ -4,7 +4,7 @@ body {
   margin-bottom: 0;
 }
 a:hover, a:focus {
-  color: white;
+  color: grey;
   text-decoration: none;
 }
 
@@ -122,9 +122,9 @@ a:hover, a:focus {
 
 
 .track-item-upvote:hover {
-  color:white;
+  color: grey;
   cursor: pointer;
 }
 .track-item:hover .track-item-upvote { transform: scale(1.2) }
 .track-item:hover .track-item-controls-hidden a { color: #E6E6E6 }
-.track-item-upvote:hover .track-item-arrow { border-bottom: 9px solid white }
+.track-item-upvote:hover .track-item-arrow { border-bottom: 9px solid grey; }

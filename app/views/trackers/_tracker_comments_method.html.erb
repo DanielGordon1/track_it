@@ -1,0 +1,13 @@
+<!-- Displays all the tracks the tracker has commented on. -->
+<div class= "container track-item-container">
+<p>Tracks that <%= @tracker.username %> has commented on.</p>
+<% trackz = [] %>
+<% @tracker.comments.each do |comment| %>
+  <% trackz << Track.find_by_id(comment.track_id) %>
+<% end %>
+<% trackz.each do |track| %>
+  <% if track.soundcloud_permalink_url != nil %>
+  <%= render "tracks/track_item", track: track %>
+  <% end %>
+<% end %>
+</div>

@@ -1,0 +1,13 @@
+<div class= "container track-item-container">
+  <h4> Upvotes </h4>
+  <!-- TODO : Link to profile page of the track -->
+  <% trackz = [] %>
+  <% @tracker.votes.each do |vote| %>
+  <% trackz << Track.find_by_id(vote.track_id) %>
+  <% end %>
+  <% trackz.each do |track| %>
+  <% if track.soundcloud_permalink_url != nil %>
+  <%= render "tracks/track_item", track: track %>
+   <% end %>
+   <% end %>
+ </div>

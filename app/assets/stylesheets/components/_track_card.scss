@@ -40,7 +40,6 @@
 
   .upvote{
   position: absolute;
-  // bottom: 10px;
   }
 
   .track-card-artwork{
@@ -71,6 +70,7 @@
       margin-right: 20px;
       border-radius: 3px;
       box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.41);
+      align-self: center;
     }
 
     .track-basic{
@@ -96,6 +96,7 @@
   position: relative;
   display: flex;
   flex-flow: column;
+  padding-bottom: 50px;
 
   @media (max-width: $screen-sm) {
     width: 100%;
@@ -154,6 +155,10 @@
     overflow: visible;
   }
 }
+
+.no-comments {
+  font-size: 12px;
+  }
 
 .track-card-avatar{
   width: 30px;

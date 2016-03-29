@@ -99,6 +99,10 @@ private
 
 def find_track
   @track = Track.find(params[:id])
+  client = Soundcloud.new(access_token: current_user.token)
+  sc_track = client.get("/tracks/#{@track.soundcloud_id}")
+  @track.soundcloud_artwork_url = sc_track.artwork_url.nil? ? sc_track.user.avatar_url : sc_track.artwork_url
+  @track.save
 end
 
 def track_params

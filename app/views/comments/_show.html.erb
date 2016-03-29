@@ -1,11 +1,17 @@
-<%= image_tag comment.user.photo_url, class: "track-card-avatar"%>
-<div class="trackers-name">
-  <p>
-    <%= link_to comment.user.username,  tracker_path(comment.user) %>
-  </p>
-</div>
-<div class="trackers-comment">
-  <p><%= comment.content %></p>
+<div class="comment-content">
+  <div class="comment-avatar">
+  <%= image_tag comment.user.photo_url, class: "track-card-avatar"%>
+  </div>
+  <div class="comment-user">
+    <div class="trackers-name">
+      <p>
+        <%= link_to comment.user.username,  tracker_path(comment.user) %>
+      </p>
+    </div>
+    <div class="trackers-comment">
+      <p><%= comment.content %></p>
+    </div>
+  </div>
 </div>
 
 

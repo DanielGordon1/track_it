@@ -34,17 +34,21 @@
 
   .upvote{
   position: absolute;
-
   bottom: 10px;
   }
 
-  .track-card-title{
+  .track-artwork{
+    width: 100%;
+  }
+
+  .track-info{
+    background-color: white;
     position: absolute;
     left: 0px;
     font-size: 20px;
-    border-radius: 3px;
-    padding-left: 10px;
     bottom: 10px;
+    display: flex;
+    flex-flow: row;
   }
 }
 
@@ -89,7 +93,19 @@
   }
 }
 
+.comment-content {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
 
+.comment-avatar {
+  padding-right: 5px;
+}
+
+.comment-user {
+  padding-left: 10px
+}
 
 .track-card-comments {
   overflow: scroll;
@@ -109,9 +125,7 @@
   #footer { display: none }
 }
 
-.trackers-name{
 
-}
 
 .trackers-comment{
   font-size: 14px;

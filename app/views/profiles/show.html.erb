@@ -23,19 +23,14 @@
 <div class="container text-center">
 
   <div class="tab-content" id="votes">
-    <%= render "upvote_card" %>
+    <%= render "upvote_method" %>
   </div>
 
   <div class="tab-content hidden" id="comments">
-    <h4>Comments</h4>
-    <% @current_user.comments.each do |comment| %>
-    <li>
-      <%= "On " + "#{comment.track.name}" + " you commented: " + "#{comment.content}" %>
-    </li>
-    <% end %>
+   <%= render "own_comments_method" %>
   </div>
 
   <div class="tab-content hidden" id="tracks">
-    <%= render "own_tracks_card" %>
+    <%= render "own_tracks_method" %>
   </div>
 </div>

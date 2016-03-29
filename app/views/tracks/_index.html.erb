@@ -33,11 +33,11 @@
 <!-- displays hot tracks per default -->
 <!-- trending and fresh tracks are 2 other routes, they have their own view -->
 <div class="tab-content" id="hot">
-  <div class= "container track-item-container">
+  <div class="container track-item-container js-tracks">
     <%= render 'tracks/tracks', tracks: @tracks %>
   </div>
-  <div class='pagination-helper' data-page='2' data-max-page="<%= @tracks.num_pages %>"
-    >
+  <div class='pagination-helper' data-page="2" data-max-page="<%= @tracks.num_pages %>" data-tab="<%= tab %>">
+
     Loading more stuff
   </div>
 </div>

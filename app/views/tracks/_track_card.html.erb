@@ -2,7 +2,7 @@
 
 <div class="track-card">
   <div class="track-card-main">
-    <div class='track-card-artwork' style= "background: url('<%= image_url track.user.photo_url %>')">>
+    <div class='track-card-artwork' style= "background: url('<%= image_url track.soundcloud_artwork_url %>')">>
     </div>
     <div class="player-track-main">
        <div class="track-item-player" style='margin: 70px'>
@@ -37,9 +37,9 @@
     <div class='track-card-comments dont-break-out'>
       <div id="comments">
         <% if track.comments.blank? %>
-          <p class="no-comments">
+          <span class="no-comments">
             Be the first to leave a comment for <%= track.name %> by <%= track.user.username %>
-          </p>
+          </span>
         <% else %>
           <% track.comments.each do |comment| %>
             <%= render 'comments/show', comment: comment %>

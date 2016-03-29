@@ -1,14 +1,17 @@
 .tabs {
-  background: #333333;
+  background: rgba(102, 102, 102, 0.5);
   display: flex;
+  margin-top: -70px;
+  height: 70px;
 }
 .tabs a {
+  background-color: black;
   color: white;
 }
 .tabs a:hover {
   cursor: pointer;
   text-decoration: none;
-  opacity: 0.8;
+  opacity: 1;
 }
 .tabs h3 {
   font-size: 17px;
@@ -16,22 +19,17 @@
   margin-top: 0;
 }
 .tabs p {
-  opacity: 0.5;
+  opacity: 0.8;
   margin-bottom: 0;
 }
 .tab {
-  background: #666666;
   flex: 0 0 33.33%;
   text-align: center;
   padding: 20px 0;
 }
-.tab:first-child {
-  border-radius: 10px 0 0 0;
-}
-.tab:last-child {
-  border-radius: 0 10px 0 0;
-}
+
 .tab.active {
   background: white;
   color: black;
+  opacity: 1;
 }

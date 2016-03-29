@@ -1,29 +1,30 @@
-<% user = User.find_by_id(track.user_id) %>
-<% photo = user.photo_url %>
-
 <div class="track-item-container">
   <div class="track-item" data-track-id="<%= track.id %>">
+    <% if user_signed_in? %>
+    <% if current_user == track.user %>
+    <button type="button" class="btn btn-danger" style="margin-right: 25px"><%= link_to "X", track_path(track), method: :delete %></button>
+    <% end %>
+    <% end %>
     <div class='track-item-upvote'>
       <%= render 'tracks/track_upvote', track: track %>
     </div>
     <div class='track-item-name'>
-     <h3><%= link_to track.name, detail_track_path(track), remote: true %></h3>
-     <div class='track-item-genre'>
-      <p><%= track.genre %></p>
+      <h3><%= link_to track.name, detail_track_path(track), remote: true %></h3>
+      <div class='track-item-genre'>
+        <p><%= track.genre %></p>
+      </div>
+    </div>
+    <div class='track-item-version'>
+      <bold><%= track.version %></bold>
+    </div>
+    <div class='track-item-comment'>
+      <i class="fa fa-comment-o"></i>
+      <%= track.comments.size %> 
+    </div>
+    <div class='track-item-image'>
+      <%=link_to tracker_path(track.user_id) do %>
+      <%= image_tag track.user.photo_url, class: "avatar-large" %>
+      <% end %>
     </div>
   </div>
-  <div class='track-item-version'>
-   <bold><%= track.version %></bold>
- </div>
- <div class='track-item-comment'>
- <i class="fa fa-comment-o"></i>
-  <%= track.comments.size %> 
 </div>
-<div class='track-item-image'>
-  <%=link_to tracker_path(track.user_id) do %>
-  <%= image_tag photo, class: "avatar-large" %>
-  <% end %>
-</div>
-</div>
-</div>
-

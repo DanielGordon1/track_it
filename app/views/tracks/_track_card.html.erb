@@ -7,7 +7,7 @@
           <div class="waveform">
           <div class="position">
           </div>
-          <iframe class="sc-widget" id='sc' src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}&show_artwork=true&liking=false&sharing=false&auto_play=false"%>></iframe>
+          <iframe class="sc-widget" id='sc' src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}"%>></iframe>
         </div>
       </div>
    </div>
@@ -22,10 +22,11 @@
       </div>
       <div class="track-card-artist">
         <%= track.user.username %>
-        <div class="play"><i class="fa fa-play"></i></div> 
+      <div class="play"><i class="fa fa-play"></i></div> 
       </div>
     </div>
   </div>
+
 </div>
 
   <div class="track-card-sidebar">

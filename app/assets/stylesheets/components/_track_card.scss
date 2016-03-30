@@ -186,18 +186,29 @@
 }
 
 .no-comments {
-      font-size: 10px;
+  font-size: 10px;
 }
-
 
 iframe { display: none; }
 
+.fa-play {
+    color: black;
+}
+.fa-play:hover {
+    color: green;
+}
+.fa-pause {
+    color: black;
+}
+.fa-pause:hover {
+    color: red;
+}
 .player {
   cursor: pointer;
   position: absolute;
   top: 0; bottom: 0;
   margin: auto;
-  height: 60px;
+  height: 400px;
   width: 500px;
   
   font-family: Helvetica, Arial, sans-serif;
@@ -215,7 +226,7 @@ iframe { display: none; }
   right: 0;
   background-size: 100% 100%;
   transition: background-image 1s linear;
-  width: 600px;
+  width: 449px;
 }
 
 .position {

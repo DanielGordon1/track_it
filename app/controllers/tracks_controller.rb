@@ -1,7 +1,8 @@
 class TracksController < ApplicationController
-  before_action :find_track, only: [:show, :upvote, :downvote, :destroy, :detail]
   respond_to :js, only: [:detail, :upvote, :index]
+
   skip_before_action :authenticate_user!, only: [:index, :fresh, :trending, :show, :detail]
+  before_action :find_track, only: [:show, :upvote, :downvote, :destroy, :detail]
 
   def fresh
     @tracks = Track.fresh.page(params[:page]).per(3)
@@ -95,18 +96,33 @@ class TracksController < ApplicationController
     end
   end
 
-private
+  private
 
-def find_track
-  @track = Track.find(params[:id])
-  client = Soundcloud.new(access_token: current_user.token)
-  sc_track = client.get("/tracks/#{@track.soundcloud_id}")
-  @track.soundcloud_artwork_url = sc_track.artwork_url.nil? ? sc_track.user.avatar_url : sc_track.artwork_url
-  @track.save
-end
+  def find_track
+    @track = Track.find(params[:id])
+    update_artwork
+  end
 
-def track_params
-  params.require(:track).permit(:name, :genre, :version)
-end
+  def track_params
+    params.require(:track).permit(:name, :genre, :version)
+  end
 
+  def update_artwork
+    if user_signed_in?
+      client = Soundcloud.new(access_token: current_user.token)
+    else
+      client = Soundcloud.new(
+        client_id:     ENV['SOUNDCLOUD_ID'],
+        client_secret: ENV['SOUNDCLOUD_SECRET']
+      )
+    end
+
+    sc_track = client.get("/tracks/#{@track.soundcloud_id}")
+
+    if sc_track.artwork_url
+      @track.update(soundcloud_artwork_url: sc_track.artwork_url)
+    else
+      @track.update(soundcloud_artwork_url: sc_track.user.avatar_url)
+    end
+  end
 end

@@ -16,23 +16,18 @@ function itsTheOnlyProblem() {
   player.bind(SC.Widget.Events.PLAY_PROGRESS, function(e) {
     if( e.relativePosition < 0.003 ) { setInfo(); }
     //Event listener when track is playing
-    $('.position').css('width', ( e.relativePosition*100)+"%");
+    $('.position').css('width', ( e.relativePosition*90)+"%");
   });
   
    $('.player').mousemove(function(e){ //Get position of mouse for scrubbing
     scrub = (e.pageX-pOffset.left);
   });
-  
+
+  // pauses on space
   $(document).on('keydown', function(e){
     switch(e.keyCode){
       case 32:
         player.toggle(); 
-      break;
-      case 39:
-        player.next();
-      break;
-      case 37:
-        player.prev();
       break;
     }
   });

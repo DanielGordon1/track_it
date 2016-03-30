@@ -176,6 +176,9 @@
   line-height: 0;
 }
 
+.no-comments {
+      font-size: 10px;
+}
 
 
 iframe { display: none; }
@@ -203,7 +206,7 @@ iframe { display: none; }
   right: 0;
   background-size: 100% 100%;
   transition: background-image 1s linear;
-  size: 500px;
+  size: 200px;
 }
 
 .position {

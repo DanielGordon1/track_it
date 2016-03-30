@@ -2,7 +2,7 @@ class TracksController < ApplicationController
   respond_to :js, only: [:detail, :upvote, :index]
 
   skip_before_action :authenticate_user!, only: [:index, :fresh, :trending, :show, :detail]
-  before_action :find_track, only: [:show, :upvote, :downvote, :destroy, :detail]
+  before_action :find_track, only: [:show, :upvote, :downvote, :detail]
 
   def fresh
     @tracks = Track.fresh.page(params[:page]).per(3)
@@ -81,8 +81,13 @@ class TracksController < ApplicationController
   end
 
   def destroy
+    @track = current_user.tracks.find(params[:id])
     @track.destroy
-    redirect_to profile_path
+
+    respond_to do |format|
+      format.html { redirect_to profile_path }
+      format.js  # <-- will render `app/views/tracks/destroy.js.erb`
+    end
   end
 
   def upvote

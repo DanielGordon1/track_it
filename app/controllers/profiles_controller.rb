@@ -2,6 +2,9 @@ class ProfilesController < ApplicationController
 
  def show
     @profile = current_user
+    @tracks = current_user.tracks.order(created_at: :desc)
+    @upvoted_tracks = Track.joins(:votes).where(votes: { user_id: current_user.id }).select("tracks.*, MAX(votes.created_at) as vote_created_at").order("vote_created_at DESC").group("tracks.id")
+    @commented_tracks = Track.joins(:comments).where(comments: { user_id: current_user.id }).select("tracks.*, MAX(comments.created_at) as comment_created_at").order("comment_created_at DESC").group("tracks.id")
   end
 
   def edit

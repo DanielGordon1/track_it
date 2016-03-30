@@ -11,12 +11,15 @@
 
 <div class="tabs">
   <a class="tab active" data-target="#votes">
+  <span><%= @tracker.votes.size %></span>
     <h3>Upvotes</h3>
   </a>
   <a class="tab" data-target="#comments">
+    <span><%= @tracker.comments.size %></span>
     <h3>Comments</h3>
   </a>
   <a class="tab" data-target="#tracks">
+    <span><%= @tracker.tracks.size %></span>
     <h3>Tracks</h3>
   </a>
 </div>

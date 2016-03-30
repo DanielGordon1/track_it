@@ -1,8 +1,8 @@
 <div class= "container track-item-container">
   <h4>Tracks uploaded by <%= @tracker.username %></h4>
-  <% @tracker.tracks.each do |track| %>
-  <% if track.soundcloud_permalink_url != nil %>
-  <%= render "tracks/track_item", track: track %>
- <% end %>
- <% end %>
+  <% tracks.each do |track| %>
+    <% if track.soundcloud_permalink_url != nil %>
+    <%= render "tracks/track_item", track: track %>
+    <% end %>
+  <% end %>
 </div>

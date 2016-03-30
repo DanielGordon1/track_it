@@ -24,20 +24,17 @@
   </a>
 </div>
 
-
 <div class="container text-center">
   <!-- Section Upvotes -->
   <div class="tab-content" id="votes">
-    <%= render "tracker_upvote_method" %>
+    <%= render "tracker_upvote_method", tracks: @upvoted_tracks_tracker %>
   </div>
-
-
+  <!-- Section Comments -->
   <div class="tab-content hidden" id="comments">
-    <%= render "tracker_comments_method" %>
+    <%= render "tracker_comments_method", tracks: @commented_tracks_tracker %>
   </div>
-
   <!-- section tracks -->
   <div class="tab-content hidden" id="tracks">
-    <%= render "tracker_tracks_method" %>
+    <%= render "tracker_tracks_method", tracks: @tracks_tracker%>
   </div>
 </div>

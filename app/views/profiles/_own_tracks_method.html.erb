@@ -1,9 +1,9 @@
- <h4>Tracks uploaded by you.</h4>
 <div class= "container track-item-container">
- <button type="button" class="btn btn-secondary"><%= link_to 'Add a new track', new_track_path%></button>
- <% @current_user.tracks.each do |track| %>
- <% if track.soundcloud_permalink_url != nil %>
- <%= render "tracks/track_item", track: track %>
- <% end %>
- <% end %>
+  <p>Tracks that you uploaded</p>
+  <button type="button" class="btn btn-secondary"><%= link_to 'Add a new track', new_track_path%></button>
+  <% tracks.each do |track| %>
+    <% if track.soundcloud_permalink_url != nil %>
+      <%= render "tracks/track_item", track: track, page: 'profile' %>
+    <% end %>
+  <% end %>
 </div>

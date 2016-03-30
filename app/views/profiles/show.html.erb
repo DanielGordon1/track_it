@@ -22,14 +22,14 @@
 
 <div class="container text-center">
   <div class="tab-content" id="votes">
-    <%= render "upvote_method" %>
+    <%= render "upvote_method", tracks: @upvoted_tracks %>
   </div>
 
   <div class="tab-content hidden" id="comments">
-   <%= render "own_comments_method" %>
+   <%= render "own_comments_method", tracks: @commented_tracks %>
   </div>
 
   <div class="tab-content hidden" id="tracks">
-    <%= render "own_tracks_method" %>
+    <%= render "own_tracks_method", tracks: @tracks %>
   </div>
 </div>

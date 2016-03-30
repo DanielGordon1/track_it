@@ -12,6 +12,16 @@ function itsTheOnlyProblem() {
     setInfo();
     player.play();
   }); //Set info on load
+
+  player.bind(SC.Widget.Events.PLAY, function() {
+    console.log('is playing')
+    $('.play i').attr('class', 'fa fa-pause')
+
+  })
+
+  player.bind(SC.Widget.Events.PAUSE, function() {
+    $('.play i').attr('class', 'fa fa-play')
+  })
   
   player.bind(SC.Widget.Events.PLAY_PROGRESS, function(e) {
     if( e.relativePosition < 0.003 ) { setInfo(); }
@@ -31,6 +41,11 @@ function itsTheOnlyProblem() {
       break;
     }
   });
+
+  // play/pauses player
+  $(".play").click(function () {
+      player.play();
+  })
 
   $('.player').click(function(){ //Use the position to seek when clicked
     $('.position').css('width',scrub+"px");
@@ -77,4 +92,4 @@ function itsTheOnlyProblem() {
       player.getPaused = bool;
     });
   }   
-}  
+}

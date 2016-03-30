@@ -1,10 +1,10 @@
 .track-card-container {
   min-height:      100vh;
-  background:      #e9eaed;
   display:         flex;
   align-items:     center;
   justify-content: center;
   padding:         50px 0;
+  background-size: cover !important;
 }
 
 .track-card {
@@ -38,6 +38,10 @@
   position: relative;
   overflow: hidden;
 
+  @media (max-width: $screen-sm) {
+    height: 250px
+  }
+
   .upvote{
   position: absolute;
   }
@@ -58,7 +62,7 @@
     position: absolute;
     left: 0px;
     font-size: 20px;
-    bottom: 10px;
+    bottom: -10px;
     display: flex;
     flex-flow: row;
     padding: 15px;
@@ -193,7 +197,7 @@ iframe { display: none; }
   position: absolute;
   top: 0; bottom: 0;
   margin: auto;
-  height: 150px;
+  height: 60px;
   width: 500px;
   
   font-family: Helvetica, Arial, sans-serif;
@@ -211,7 +215,7 @@ iframe { display: none; }
   right: 0;
   background-size: 100% 100%;
   transition: background-image 1s linear;
-  size: 200px;
+  width: 600px;
 }
 
 .position {
@@ -225,24 +229,17 @@ iframe { display: none; }
 }
 
 
-.info {
-  user-select: none;
-  z-index: 5;
-  position: absolute;
-  height: 1em;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  font-size: 5em;
-  letter-spacing: -.08em;
-  
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: center;
-  
-  color: white;
-  mix-blend-mode: difference;
+button {
+  padding:10px;
+  margin:0 10px;
+  width:120px;
+  cursor:pointer;
 }
+
+.nav {
+  width:600px;
+  margin:auto;
+  text-align:center;
+}
+
+

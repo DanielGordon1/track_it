@@ -179,5 +179,70 @@
   padding-bottom: 10px;
   color: #A09C9C;
   line-height: 0;
+}
 
+.no-comments {
+      font-size: 10px;
+}
+
+
+iframe { display: none; }
+
+.player {
+  cursor: pointer;
+  position: absolute;
+  top: 0; bottom: 0;
+  margin: auto;
+  height: 150px;
+  width: 500px;
+  
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #efefef;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s linear;
+}
+
+.waveform {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: 100% 100%;
+  transition: background-image 1s linear;
+  size: 200px;
+}
+
+.position {
+  opacity: 0.5;
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background-color: white;
+  transition: width .1s linear;
+  // mix-blend-mode: overlay;
+}
+
+
+.info {
+  user-select: none;
+  z-index: 5;
+  position: absolute;
+  height: 1em;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 5em;
+  letter-spacing: -.08em;
+  
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  
+  color: white;
+  mix-blend-mode: difference;
 }

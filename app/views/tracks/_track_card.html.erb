@@ -1,55 +1,58 @@
 <!-- This is the pop-up Modal -->
-
-<div class="track-card">
-  <div class="track-card-main">
-    <div class='track-card-artwork' style= "background: url('<%= image_url track.soundcloud_artwork_url %>')">>
-    </div>
-    <div class="player-track-main">
-       <div class="track-item-player" style='margin: 70px'>
-       <iframe id="soundcloud_player"src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}&show_artwork=true&liking=false&sharing=false&auto_play=false"%>
-         style=
-         width="400"
-         height="100"
-         frameborder="no"
-         padding="0px"
-         ></iframe>
-     </div>
-    </div>
-
-
-    <div class="track-info">
-      <div class="track-card-upvote track-item-upvote">
-          <%= render 'track_upvote', track: track %>
+<div>
+  <div class="track-card">
+    <div class="track-card-main">
+      <div class='track-card-artwork' style= "background: url('<%= image_url track.soundcloud_artwork_url %>')">>
       </div>
-      <div class="track-basic">
-        <div class='track-card-title'>
-            <%= track.name %>
-        </div>
-        <div class="track-card-artist">
-            <%= track.user.username %>
-        </div>
-      </div>
+    <div class="player-track-main" style="width: 300px;">
+     <div class="track-item-player">
     </div>
   </div>
 
-  <div class="track-card-sidebar">
-    <span class="track-comment-size"><%= pluralize track.comments.size, "comment" %></span>
-    <div class='track-card-comments dont-break-out'>
-      <div id="comments">
-        <% if track.comments.blank? %>
-          <span class="no-comments">
-            Be the first to leave a comment for <%= track.name %> by <%= track.user.username %>
-          </span>
-        <% else %>
-          <% track.comments.each do |comment| %>
-            <%= render 'comments/show', comment: comment %>
-          <% end %>
-        <% end %>
+
+  <div class="track-info">
+    <div class="track-card-upvote track-item-upvote">
+      <%= render 'track_upvote', track: track %>
+    </div>
+    <div class="track-basic">
+      <div class='track-card-title'>
+        <%= track.name %>
+      </div>
+      <div class="track-card-artist">
+        <%= track.user.username %>
       </div>
     </div>
-    <div class='track-card-sidebar-footer'>
-      <%= render 'comments/form', track: track, comment: Comment.new %>
+  </div>
+</div>
+
+<div class="track-card-sidebar">
+  <span class="track-comment-size"><%= pluralize track.comments.size, "comment" %></span>
+  <div class='track-card-comments dont-break-out'>
+    <div id="comments">
+      <% if track.comments.blank? %>
+      <span class="no-comments">
+        Be the first to leave a comment for <%= track.name %> by <%= track.user.username %>
+      </span>
+      <% else %>
+      <% track.comments.each do |comment| %>
+      <%= render 'comments/show', comment: comment %>
+      <% end %>
+      <% end %>
     </div>
+  </div>
+  <div class='track-card-sidebar-footer'>
+    <%= render 'comments/form', track: track, comment: Comment.new %>
+  </div>
+</div>
+</div>
+<div class="track-card-under">
+  <div class="player">
+    <div class="waveform"></div>
+
+    <div class="position"></div>  
+  </div>
+  <iframe class="sc-widget" src=<%= "//w.soundcloud.com/player/?url=#{track.soundcloud_permalink_url}&show_artwork=true&liking=false&sharing=false&auto_play=false"%>
+    ></iframe>
   </div>
 </div>
 

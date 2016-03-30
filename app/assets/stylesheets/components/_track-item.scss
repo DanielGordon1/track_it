@@ -22,6 +22,147 @@ a:hover, a:focus {
   max-width: 800px;
 }
 
+.track-item-genre {
+  opacity: .5;
+}
+
+.track-item-version {
+  margin: 0 20px;
+  opacity: .5;
+}
+
+.track-item-comment {
+  margin-left: -20px;
+  margin: 0 20px;
+  opacity: .5;
+  overflow:hidden;
+}
+
+.track-item {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  transition: all 0.15s ease;
+  padding-left: 10px;
+  background-color: white;
+  padding: 20px 10px;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(black, .03);
+  }
+}
+
+/* Body design */
+.track-item-name {
+  flex: 1 1 auto;
+}
+
+.track-item h3 {
+  font-size: 20px;
+}
+.track-item-body p {
+  font-weight: lighter;
+  color: #999999;
+  margin-bottom: 0;
+}
+
+.track-item-image{
+  overflow: hidden
+}
+
+
+/* Upvote design */
+.track-item-upvote {
+  padding-right: 20px;
+  text-align: center;
+  transition: all 0.15s ease;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 20px;
+}
+.track-item-count {
+  margin: 2px 0 0;
+}
+.track-item-arrow {
+  transition: all 0.15s ease;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid transparent;
+  border-bottom: 9px solid black;
+  border-radius: 2px;
+  margin: auto;
+}
+
+/* Controls design */
+.track-item-controls {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0px;
+}
+.track-item-controls a {
+  padding: 0 20px;
+  font-size: 17px;
+  color: #E6E6E6;
+}
+
+.track-item-controls-hidden a {
+  color: transparent;
+  font-size: 25px;
+  transition: all 0.15s ease;
+  border-color: transparent;
+  text-align: center;
+  flex: 1 1 auto;
+}
+
+.track-item-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.delete-button {
+  margin-right: 70px;
+}
+
+.track-item-upvote:hover {
+  color: grey;
+  cursor: pointer;
+}
+.track-item:hover .track-item-upvote { transform: scale(1.2) }
+.track-item:hover .track-item-controls-hidden a { color: #E6E6E6 }
+.track-item-upvote:hover .track-item-arrow { border-bottom: 9px solid grey; }
+body {
+  background-color: white;
+  font-weight: lighter;
+  margin-bottom: 0;
+}
+a:hover, a:focus {
+  color: grey;
+  text-decoration: none;
+}
+
+.player{
+  max-width: 310px;
+}
+
+.player iframe{
+  height: 160px;
+}
+
+.track-item-container {
+  text:center;
+  padding-top: 20px;
+  max-width: 800px;
+}
+
+.track-item-genre {
+  opacity: .5;
+}
+
 .track-item-version {
   margin: 0 20px;
   opacity: .5;

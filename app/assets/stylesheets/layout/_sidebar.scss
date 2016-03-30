@@ -75,18 +75,19 @@ a:hover, a:focus {
             z-index: 4;
             overflow: auto;
             top: 0px;
-            right: -110px;
-            width: 110px;
-            opacity: 0;
+            right: -90px;
+            width: 90px;
+            opacity: 1;
             padding: 20px 0px;
-            height: 60%;
-            background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 1)), to(rgba(0, 0, 0, 0)));
+            height: 100%;
+            background: white;
             transition: all 350ms $easing;
+            border-left: black 1px solid;
         }
 
         #box.active {
             right: 0px;
-            opacity: 0.9;
+            opacity: 1;
 
         }
 

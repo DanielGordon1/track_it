@@ -1,10 +1,5 @@
 <div class="track-item-container">
   <div class="track-item" data-track-id="<%= track.id %>">
-    <% if user_signed_in? %>
-      <% if current_user == track.user %>
-        <button type="button" class="btn btn-danger" style="margin-right: 25px"><%= link_to "X", track_path(track), method: :delete %></button>
-      <% end %>
-    <% end %>
     <div class='track-item-upvote'>
       <%= render 'tracks/track_upvote', track: track %>
     </div>

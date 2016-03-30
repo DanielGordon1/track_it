@@ -1,0 +1,7 @@
+<div class="delete-button">
+  <% if user_signed_in? %>
+      <% if current_user == track.user %>
+        <i class="fa fa-trash"><%= link_to track_path(track), method: :delete %></i>
+      <% end %>
+    <% end %>
+</div>

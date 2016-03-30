@@ -1,5 +1,54 @@
-.Bar {
-    margin-left: auto;
-    margin-right: auto;
-    position: center;
+.collapse {
+  color: white;
+  background-color: #79cccd;
+
+  p{
+    opacity: 0.6;
+  }
+
+  h5 {
+    opacity: 0.6;
+  }
 }
+
+.collapsing {
+  background-color: #79cccd;
+  color: white;
+
+  p{
+    opacity: 0.6;
+  }
+
+  h5 {
+    opacity: 0.6;
+  }
+}
+
+.collapse.in{
+  background-color: #79cccd;
+}
+
+
+.Bar {
+  background-color: black;
+  margin-left: auto;
+  margin-right: auto;
+  position: center;
+}
+
+.row {
+  .fa {
+    font-size: 25px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.33);
+    margin: auto;
+  }
+}
+

@@ -18,7 +18,6 @@ body.stop-scrolling {
 
 .sweet-alert {
   background-color: white;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   width: 478px;
   padding: 17px;
   border-radius: 5px;
@@ -160,7 +159,7 @@ body.stop-scrolling {
     display: block; }
   .sweet-alert .sa-confirm-button-container {
     display: inline-block;
-    position: relative; }
+    position: relative;}
   .sweet-alert .la-ball-fall {
     position: absolute;
     left: 50%;
@@ -180,7 +179,8 @@ body.stop-scrolling {
     border-radius: 5px;
     padding: 10px 32px;
     margin: 26px 5px 0 5px;
-    cursor: pointer; }
+    cursor: pointer;
+    width: 300px; }
     .sweet-alert button:focus {
       outline: none;
       box-shadow: 0 0 2px rgba(128, 179, 235, 0.5), inset 0 0 0 1px rgba(0, 0, 0, 0.05); }
@@ -226,7 +226,8 @@ body.stop-scrolling {
       border-color: #F27474; }
       .sweet-alert .sa-icon.sa-error .sa-x-mark {
         position: relative;
-        display: block; }
+        display: block;
+        }
       .sweet-alert .sa-icon.sa-error .sa-line {
         position: absolute;
         height: 5px;
@@ -244,7 +245,8 @@ body.stop-scrolling {
           transform: rotate(-45deg);
           right: 16px; }
     .sweet-alert .sa-icon.sa-warning {
-      border-color: #F8BB86; }
+      border-color: #F8BB86;
+      display: none; }
       .sweet-alert .sa-icon.sa-warning .sa-body {
         position: absolute;
         width: 5px;
@@ -254,7 +256,8 @@ body.stop-scrolling {
         -webkit-border-radius: 2px;
         border-radius: 2px;
         margin-left: -2px;
-        background-color: #F8BB86; }
+        background-color: #F8BB86;
+         }
       .sweet-alert .sa-icon.sa-warning .sa-dot {
         position: absolute;
         width: 7px;

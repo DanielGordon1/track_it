@@ -3,6 +3,7 @@
   text-align: center;
   background: url('http://res.cloudinary.com/dgordon1/image/upload/c_scale,h_2399/v1458564793/fader_nm5vow.jpg')center center;
   height: 100vh;
+  min-height: 650px;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;

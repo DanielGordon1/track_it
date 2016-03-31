@@ -1,4 +1,11 @@
-<%= link_to upvote_track_path(track), remote: true, method: :patch, class: "track-upvote track-upvote-#{track.id}" do %>
-  <div class="track-item-arrow"></div>
-  <%= (track.votes.count)%>
+<% if user_signed_in? %>
+  <%= link_to upvote_track_path(track), remote: true, method: :patch, class: "track-upvote track-upvote-#{track.id}" do %>
+    <div class="track-item-arrow"></div>
+    <%= (track.votes.count)%>
+  <% end %>
+<% else  %>
+  <a class="track-upvote track-upvote-#{track.id}" data-toggle="modal" data-target="#modal-signup"%>
+    <div class="track-item-arrow"></div>
+    <%= (track.votes.count)%>
+  </a>
 <% end %>

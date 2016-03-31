@@ -14,3 +14,4 @@ $(document).on('click', '.modal-show-container', function(){
   $('.modal-show').html('')
   window.history.pushState('',"", '/');
 })
+

@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'redis'
 gem "slim-rails"
+gem 'sweet-alert'
 
 gem 'activeadmin', github: 'activeadmin'
 gem 'cloudinary'
@@ -36,8 +37,6 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
-
-
 end
 
 group :production do

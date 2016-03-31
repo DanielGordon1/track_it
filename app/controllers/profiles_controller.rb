@@ -19,11 +19,6 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def destroy
-    @profile.destroy
-    redirect_to users_path
-  end
-
   private
 
   def set_profile

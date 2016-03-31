@@ -14,10 +14,9 @@
       </div>
       <div class='track-item-right'>
             <% if user_signed_in? && current_user == track.user && local_assigns[:page] == 'profile' %>
-        <%= link_to track_path(track), method: :delete, remote: true, data: { confirm: "Are you sure"} do %>
-
+        <span data-behavior="delete" data-path="<%= track_path(track) %>">
           <i class="fa fa-trash"></i>
-        <% end %>
+        </span>
       <% end %>
         <div class='track-item-version'>
           <bold><%= track.version %></bold>

@@ -1,4 +1,4 @@
-$('#ti').on('click', '.modal-show', function(e){
+$(document).on('click', '.modal-show', function(e){
   $('.modal-show-container').stopPropagation();
 })
 

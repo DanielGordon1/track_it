@@ -22,7 +22,7 @@ class Track < ActiveRecord::Base
       # joins the amount of votes to each track (take in account when the track as 0 votes)
       joins("LEFT OUTER JOIN votes ON votes.track_id = tracks.id").
       # tracks need to have a permalink
-      where.not(soundcloud_permalink_url: nil).
+      where.not(soundcloud_permalink_url:  nil).
       group("tracks.id").
       # the tracks are order by votes, if same amount of votes, by date of creation
       order("votes_count DESC, tracks.created_at DESC")

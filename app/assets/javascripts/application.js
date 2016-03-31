@@ -10,4 +10,4 @@
 //= require visibility.min.js
 //= require alert
 //= require customplayer
-
+//= require sweet_alert.min.js

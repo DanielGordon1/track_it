@@ -27,6 +27,7 @@
   position: relative;
 }
 
+
 .track-card-main {
   flex:         1;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
@@ -139,10 +140,14 @@
 .btn-default {
     margin-top: 0px;
 }
+
+.comment_content{
+  font-size: 10px;
+}
+
 .comment-content {
   display: flex;
   flex-direction: row;
-  padding-top: 10px;
 }
 
 .comment-avatar {
@@ -166,6 +171,11 @@
 .no-comments {
   font-size: 12px;
   }
+
+.track-comment-size {
+  padding-bottom: 10px;
+  font-size: 12px;
+}
 
 .track-card-avatar{
   width: 30px;

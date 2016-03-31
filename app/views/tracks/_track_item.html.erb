@@ -1,11 +1,6 @@
 <div class="track-item-container">
-  <div class="track-item" data-track-id="<%= track.id %>">
+  <div class="track-item" id="ti" data-track-id="<%= track.id %>">
     <div class="delete-button">
-      <% if user_signed_in? && current_user == track.user && local_assigns[:page] == 'profile' %>
-        <%= link_to track_path(track), method: :delete, remote: true, data: { confirm: "Are you sure?" } do %>
-          <i class="fa fa-trash"></i>
-        <% end %>
-      <% end %>
   </div>
     <div class='track-item-upvote'>
       <%= render 'tracks/track_upvote', track: track %>
@@ -18,6 +13,11 @@
         </div>
       </div>
       <div class='track-item-right'>
+            <% if user_signed_in? && current_user == track.user && local_assigns[:page] == 'profile' %>
+        <%= link_to track_path(track), method: :delete, remote: true, data: { confirm: "Are you sure?" } do %>
+          <i class="fa fa-trash"></i>
+        <% end %>
+      <% end %>
         <div class='track-item-version'>
           <bold><%= track.version %></bold>
         </div>

@@ -26,7 +26,7 @@ function itsTheOnlyProblem() {
   player.bind(SC.Widget.Events.PLAY_PROGRESS, function(e) {
     if( e.relativePosition < 0.003 ) { setInfo(); }
     //Event listener when track is playing
-    $('.position').css('width', ( e.relativePosition*90)+"%");
+    $('.position').css('width', ( e.relativePosition*100)+"%");
   });
   
    $('.player').mousemove(function(e){ //Get position of mouse for scrubbing

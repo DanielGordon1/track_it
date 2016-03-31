@@ -11,3 +11,4 @@
 //= require alert
 //= require customplayer
 //= require sweet_alert.min.js
+//= require delete_swal.js

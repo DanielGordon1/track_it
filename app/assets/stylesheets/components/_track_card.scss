@@ -204,6 +204,12 @@
 
 iframe { display: none; }
 
+.play {
+      background-color: azure;
+    max-width: 20px;
+    text-align: center;
+}
+
 .fa-play {
     color: black;
 }
@@ -223,6 +229,7 @@ iframe { display: none; }
   margin: auto;
   height: 400px;
   width: 500px;
+  max-width: none !important;
   
   font-family: Helvetica, Arial, sans-serif;
   background-color: #efefef;

@@ -76,7 +76,6 @@ function itsTheOnlyProblem() {
        console.log(song);
       
       $('.waveform').css('background-image', "url('" + waveformPng + "')");    
-      $('.player').css('background-image', "url('" + artworkUrl.replace('-large', '-t500x500') + "')");
       
       var info = song.title;
       $('.info').html(info);

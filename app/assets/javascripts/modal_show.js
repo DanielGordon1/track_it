@@ -1,5 +1,5 @@
 $(document).on('click', '.modal-show', function(e){
-  $('.modal-show-container').stopPropagation();
+  e.stopPropagation();
 })
 
 

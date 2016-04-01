@@ -1,5 +1,5 @@
 # config/meta.yml
 meta_title: "Track it - Just tracks. No bullshit."
-meta_description: "Discover cool unheard of tracks and add to our community"
+meta_description: "Discover cool unheard tracks and contribute to our community"
 meta_image: "fader.jpg" # Une image dans votre dossier app/assets/images/
 twitter_account: "@track-it" # indispensable pour les Twitter Cards

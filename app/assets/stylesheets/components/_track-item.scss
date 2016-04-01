@@ -22,6 +22,16 @@ a:hover, a:focus {
   margin: 0 20px;
   opacity: .5;
 }
+@media screen and (max-width: 600px) {
+  .track-item-version {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
+}
 
 .track-item-comment {
   margin-left: -20px;

@@ -33,14 +33,14 @@ function itsTheOnlyProblem() {
     scrub = (e.pageX-pOffset.left);
   });
 
-  // pauses on space
-  $(document).on('keydown', function(e){
-    switch(e.keyCode){
-      case 32:
-        player.toggle(); 
-      break;
-    }
-  });
+  // // pauses on space
+  // $(document).on('keydown', function(e){
+  //   switch(e.keyCode){
+  //     case 32:
+  //       player.toggle(); 
+  //     break;
+  //   }
+  // });
 
   // play/pauses player
   $(".play").click(function () {

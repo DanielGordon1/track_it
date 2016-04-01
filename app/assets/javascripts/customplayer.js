@@ -44,7 +44,7 @@ function itsTheOnlyProblem() {
 
   // play/pauses player
   $(".play").click(function () {
-      player.play();
+      player.toggle();
   })
 
   $('.player').click(function(){ //Use the position to seek when clicked
